@@ -1,1492 +1,717 @@
 var test = [
     {
-        question: `ETL工具有哪些（ ）	<br>A.Datax	<br>B.Kettle	<br>C.DataPipeline	<br>D.Informatica`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `ETL对数据做哪些处理过程（）	<br>A.抽取	<br>B.转换	<br>C.加载	<br>D.调用`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `Kettle包括哪些产品（）	<br>A.Spoon	<br>B.CHEF	<br>C.Pan	<br>D.Kitchen`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `DataX是阿里开源的一个异构数据源离线同步工，它支持哪些数据库（）	<br>A.Postgre	<br>B.HDFS	<br>C.HIVE	<br>D.MYSQL`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `Kettle支持在哪些环境下运行（）	<br>A.windows	<br>B.linux	<br>C.android	<br>D.Unix`, answer: ["A", "B", "D"], type: "checkbox"
-    },
-    {
-        question: `ETL会对哪些数据进行处理（）　	<br>A.分散数据	<br>B.标准数据	<br>C.零乱数据	<br>D.标准不统一数据`, answer: ["A", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `ETL支持哪些技术语言（）	<br>A.JAVA	<br>B.python	<br>C.'C#'	<br>D.SHELL脚本语言`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `ETL是一种数据仓库技术	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `ETL不支持JAVA语言	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `ETL工具技术只有Kettle	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `DataX不支持数据同步	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `ETL不能对数据进行转换	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `Kettle包括SPOON　	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `ETL可以在LINUX上运行	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Kettle部署环境为运行LINUX，transformation文件是通过pan.sh来运行的　	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Kettle支持HIVE数据转入到MYSQL	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Kettle支持字符替换转换	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `ETL工具支持一对多的映射转换	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `DataX框架采用Framework + plugin架构构建	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Spoon不支持mongoDB	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `运用Kettle技术执行HIVE到HIVE直接转换速度很慢	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `kettle功能不包括（）	<br>A.数据清洗	<br>B.数据分析	<br>C.数据转换	<br>D.数据抽取`, answer: "B"
-    },
-    {
-        question: `DataX开源框架由哪个公司提供（）	<br>A.腾讯	<br>B.谷歌	<br>C.网易	<br>D.阿里`, answer: "D"
-    },
-    {
-        question: `Kettle不包括以下哪个产品（）	<br>A.Spoon	<br>B.DataX	<br>C.Pan	<br>D.Kitchen`, answer: "B"
-    },
-    {
-        question: `Kettle启动文件是（）	<br>A.spoon.bat	<br>B.spoon.sql	<br>C.spoon.shell	<br>D.spoon.txt`, answer: "A"
-    },
-    {
-        question: `ETL抽取阶段的主要任务包括（）	<br>A.抽取数据到数据准备区	<br>B.存储结果数据	<br>C.修改数据	<br>D.删除数据`, answer: "A"
-    },
-    {
-        question: `ETL清洗阶段的主要任务不包括	<br>A.清洗并增补数据结构	<br>B.增补复杂的业务规则	<br>C.变化数据捕获	<br>D.建立元数据库描述数据质量`, answer: "C"
-    },
-    {
-        question: `ETL支持的数据源不包括（）	<br>A.TXT　	<br>B.MYSQL　	<br>C.HIVE	<br>D.　PNG文件`, answer: "D"
-    },
-    {
-        question: `DATAX中，关于epoll和select的区别不包括（）　	<br>A.select能并行支持I/O比较小，且无法修改。	<br>B.epoll支持水平触发和边沿触发两种模式。	<br>C.epoll相比select效率更高，主要是基于其操作系统支持的I/O事件通知机制，而select是基于轮询机制。	<br>D.epoll和select都是I/O多路复用的技术，都可以实现同时监听多个I/O事件的状态。`, answer: "A"
-    },
-    {
-        question: `Kettle的描述正确的是（）	<br>A.支持分布式	<br>B.它不是开源框架	<br>C.　不支持分布式	<br>D.Spoon支持mongoDB`, answer: "C"
-    },
-    {
-        question: `使用ETL带来的价值不含（）	<br>A.内部业务系统的数据集成	<br>B.外部业务系统数据	<br>C.大型装备工况数据的采集分析	<br>D.快速集成分散数据`, answer: "B"
-    },
-    {
-        question: `ETL不支持以下哪种技术语言对接（）	<br>A.JAVA　	<br>B.python　	<br>C.TXT　	<br>D.C#`, answer: "C"
-    },
-    {
-        question: `ETL无需对哪些数据进行处理（）	<br>A.分散数据	<br>B.标准数据	<br>C.零乱数据	<br>D.标准不统一数据`, answer: "B"
-    },
-    {
-        question: `ETL处理有哪些模块，除了（）	<br>A.数据抽取	<br>B.数据清洗　	<br>C.数据分离	<br>D.　库内转换`, answer: "C"
-    },
-    {
-        question: `ETL中数据转换支持哪些场景，除了（）	<br>A.字符替换	<br>B.　重复过滤	<br>C.　字段拆分　	<br>D.　图片解析　`, answer: "D"
-    },
-    {
-        question: `ETL架构的优势不包括（）	<br>A.可以分担数据库系统的负载	<br>B.相对于ELT架构可以实现更为复杂的数据转换逻辑	<br>C.与底层的数据库存储有关	<br>D.采用单独的硬件服务器`, answer: "C"
-    },
-    {
-        question: `ETL支持下列哪些场景，除了（）	<br>A.增量　　	<br>B.全量　　	<br>C.覆盖　　	<br>D.修改目标表结构`, answer: "D"
-    },
-    {
-        question: `Kettle概念不包括（）　	<br>A.它是由JAVA语言研发的　	<br>B.Kettle中Job中的JobEntry是并行执行	<br>C.Kettle可以被归类为可视化编程语言	<br>D.Kettle 里的图就是转换和作业`, answer: "B"
-    },
-    {
-        question: `Kettle转换的数据类型不含（）	<br>A.String 　	<br>B.Integer　	<br>C.JPG　	<br>D.Boolean　`, answer: "C"
-    },
-    {
-        question: `DATAX中的Framework用于连接（）	<br>A.ORACLE　	<br>B.reader	<br>C.　MYSQL	<br>D.　　HIVE`, answer: "B"
-    },
-    {
-        question: `DATAX中启动服务（）	<br>A. /sbin/service crond restart　	<br>B.　/sbin/service crond stop　	<br>C.　/sbin/service crond start　　 	<br>D./sbin/service crond reload`, answer: "C"
-    },
-    {
-        question: `Kettle支持在不能在哪个环境下运行（）	<br>A.WINDOWS　	<br>B.LINUX	<br>C.　Unix	<br>D.　IOS　　`, answer: "D"
-    },
-    {
-        question: `下列属于反映比例关系的可视化图表的是()。	<br>A.旭日图	<br>B.散点图	<br>C.热力图	<br>D.气泡图`, answer: "A"
-    },
-    {
-        question: `对图表进行修改，我们可以在选取对象后，进行()操作进行修改。	<br>A.单击鼠标	<br>B.双击鼠标	<br>C.右击鼠标	<br>D.左击鼠标`, answer: "C"
-    },
-    {
-        question: `显示一段时间内数据的大小变化或显示各项之间的比较情况，我们往往选择哪类图表()。	<br>A.旭日图	<br>B.柱形图	<br>C.热力图	<br>D.气泡图`, answer: "B"
-    },
-    {
-        question: `为了形象、直观地表示数值大小及变化趋势时，往往选择()	<br>A.数字	<br>B.文字	<br>C.表格	<br>D.图表`, answer: "D"
-    },
-    {
-        question: `下列属于反映数据走向可视化图表的是()	<br>A.散点图	<br>B.折线图	<br>C.雷达	<br>D.文字`, answer: "B"
-    },
-    {
-        question: `下列不属于数据可视化工具的是()	<br>A.Tableau	<br>B.DataV	<br>C.PowerPoint	<br>D.Power BI`, answer: "C"
-    },
-    {
-        question: `显示一个整体内各部分所占的比例，我们往往选择哪类图表()	<br>A.饼图	<br>B.散点图	<br>C.热力图	<br>D.气泡图`, answer: "A"
-    },
-    {
-        question: `下列属于基本图表的是（）	<br>A.瀑布图	<br>B.滑珠图	<br>C.漏斗图	<br>D.柱形图`, answer: "D"
-    },
-    {
-        question: `以下()图可以有效地提供不同商品的销售和趋势情况。	<br>A.饼图	<br>B.分组直方图	<br>C.气泡图	<br>D.条形图和线图的组合图`, answer: "D"
-    },
-    {
-        question: `在使用图表呈现分析结果时，要描叙全校男女同学的比例关系，最好使用	<br>A.柱形图	<br>B.条形图	<br>C.折线图	<br>D.饼状图`, answer: "D"
-    },
-    {
-        question: `商务数据分析流程中最耗费时间的是()	<br>A.数据收集	<br>B.数据处理	<br>C.数据分析	<br>D.数据展现`, answer: "B"
-    },
-    {
-        question: `可以表达清晰的层级和归属关系，以父子层次结构来显示数据构成情况的是（）。	<br>A.桑基图	<br>B.旭日图	<br>C.树图	<br>D.瀑布图`, answer: "B"
-    },
-    {
-        question: `需要统计数值区间的分布，例如年龄段的人数、收入水平、工资收入分布等推荐使用（）。	<br>A.直方图	<br>B.散点图	<br>C.热力图	<br>D.气泡图`, answer: "A"
-    },
-    {
-        question: `展现数据流动的桑基图的构成不包括以下哪一个（）	<br>A.边	<br>B.流量	<br>C.节点	<br>D.值`, answer: "D"
-    },
-    {
-        question: `下面哪些优势不属于线图（）。	<br>A.展现数据的增减趋势	<br>B.展现数据的增减的速率	<br>C.展现数据的峰值特征	<br>D.多个指标进行趋势对比`, answer: "D"
-    },
-    {
-        question: `集中趋势反映变量数值向特定中心靠拢的趋势的统计量。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据清洗是发现并纠正数据文件中可识别错误的第一道程序。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `雷达图又称为蜘蛛网图，是财务分析报表的一种。 	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `常见的反映差异化的图表类型是气泡图。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `数据透视表是一种交互式报表，能对大量的数据进行汇总，帮助读者分析和处理数据。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据处理指对收集到的数据进行加工整理，形成适合数据分析的样式，它是数据分析前必不可少的阶段，主要包括数据清洗，数据转化、数据提取、数据计算等。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `圆环图显示各个部分与整体之间的关系，可以包含多个数据系列，所以可以将圆环图看成特殊的饼图。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `饼图一般用于显示数据系列中各项的大小与各项总和的比例，饼图中的数据点显示为整个饼图的百分比。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `瀑布图是由麦肯锡顾问公司所独创的图表类型，此种图表采用绝对值与相对值结合的方式，适用于表达数个特定数值之间的数量变化关系。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `图例就是集中与图表一角或一侧的各种形状和颜色所代表内容与指标的说明。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `反映发展趋势的可视化图表有哪些( )。	<br>A.柱形图	<br>B.折线图	<br>C.面积图	<br>D.散点图`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `按数据组织的类型划分，柱形图可以分为( )。	<br>A.簇状柱形图	<br>B.堆积柱形图	<br>C.百分比堆积柱形图	<br>D.圆锥柱形图`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `商务数据可视化要简约，所以要避免()等不必要的设计。	<br>A.文本的3D效果	<br>B.毫无关联的元素	<br>C.对比鲜明的色彩	<br>D.装饰性的插图`, answer: ["A", "B", "D"], type: "checkbox"
-    },
-    {
-        question: `图表设计主要分为(）	<br>A.A.配色设计	<br>B.B.内容设计	<br>C.C.图片设计	<br>D.D.版式设计`, answer: ["A", "D"], type: "checkbox"
-    },
-    {
-        question: `在可视化平台画布编辑器页面组件被锁定有什么作用（）	<br>A.不可修改	<br>B.不可移动	<br>C.不可删除	<br>D.不可复制`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `样本的方差能够近似地反映整体的()	<br>A.平均状态	<br>B.散布规律	<br>C.波动大小	<br>D.最大值和最小值`, answer: "C"
-    },
-    {
-        question: `某企业生产某种产品的产量每年增加十万吨，则该产品产量的环比增长速度	<br>A.法得出结论	<br>B.年年增长	<br>C.年年保持不变	<br>D.年年下降`, answer: "D"
-    },
-    {
-        question: `测量抽样误差最常用的指标是	<br>A.变异系数	<br>B.标准差	<br>C.抽样方差	<br>D.置信区间`, answer: "B"
-    },
-    {
-        question: `某商店计划规定本年费用水平比去年下降4%，实际下降了6%，则该商店费用水平计划完成程度是()	<br>A.0.979	<br>B.1.019	<br>C.1.021	<br>D.1.5`, answer: "A"
-    },
-    {
-        question: `现有一批数据为(0,1,2,-2,3,-3,4)， 则这批数据的极差为()	<br>A.4	<br>B.5	<br>C.6	<br>D.7`, answer: "D"
-    },
-    {
-        question: `对于一个右偏的频数分布，一般情况下()的值最大。	<br>A.中位数	<br>B.众数	<br>C.算术平均数	<br>D.无法判断`, answer: "C"
-    },
-    {
-        question: `数据可视化是使用可视化应用的方式来分析并展示庞杂数据的产品。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据清洗是发现并纠正数据文件中可识别错误第一道程序。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `交叉型数据属于脏数据。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `默认的切片器项目是横向向分布的。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `下列属于查找重复数据的方法的是( )。	<br>A.条件格式法	<br>B.函数法	<br>C.高级筛选法	<br>D.数据透视表法`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `下列属于特殊图表的是( )。	<br>A.子弹图	<br>B.甘特图	<br>C.断层图	<br>D.气泡图`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `下列不属于技术元数据的是？	<br>A.数据表结构	<br>B.调度作业之间的依赖关系	<br>C.ETL任务的定时时间	<br>D.敏感数据的安全申请流程`, answer: "D"
-    },
-    {
-        question: `下列有关数据质量的说法错误的是？	<br>A.数据在计划、获取、存储、共享、维护、应用、消亡生命周期的每个阶段里可能引发的各类数据质量问题。	<br>B.数据是否按照时间的要求进行上传不是衡量数据质量的指标。	<br>C.数据质量管理是指运用相关技术来衡量、提高和确保数据质量的规划、实施与控制等一系列活动。	<br>D.数据标准是数据质量稽核规则的主要参考依据。`, answer: "B"
-    },
-    {
-        question: `数据字典是对系统中（）的描述？	<br>A.数据	<br>B.处理	<br>C.功能	<br>D.权限`, answer: "A"
-    },
-    {
-        question: `下列哪一项不是数据仓库的特点？	<br>A.面向主题的	<br>B.集成的	<br>C.相对稳定的	<br>D.实时的`, answer: "D"
-    },
-    {
-        question: `哪一个数据质量维度用于度量哪些数据和信息是不正确的，或者数据是超期的？	<br>A.规范性	<br>B.一致性	<br>C.准确性	<br>D.关联性`, answer: "C"
-    },
-    {
-        question: `关系型数据库中，关于主键的描述正确的是？	<br>A.标识表中唯一的实体	<br>B.创建唯一索引，允许空值	<br>C.只允许以表中第一字段建立	<br>D.一个表中允许有多个主键`, answer: "A"
-    },
-    {
-        question: `假设使用一种加密算法，它的加密方法很简单：将每一个字母加5，即a加密成f。这种算法的密钥就是5，那么它属于()	<br>A.分组密码技术	<br>B.对称加密技术	<br>C.公钥加密技术	<br>D.单向函数密码技术`, answer: "B"
-    },
-    {
-        question: `在多维分析中，将多维下标的取值降低到较低的概念层次上，从而形成新的统计查询结果，并进行分析，这样的动作称之为	<br>A.上钻	<br>B.下钻	<br>C.旋转	<br>D.切片`, answer: "B"
-    },
-    {
-        question: `分析指标中的统计口径属于元数据的？	<br>A.技术元数据	<br>B.业务元数据	<br>C.管理元数据	<br>D.不属于元数据`, answer: "B"
-    },
-    {
-        question: `下列哪一项属于数据质量完整性检查？	<br>A.今天用户发展量与昨天用户发展量比不超过5%	<br>B.用户姓名不允许为空	<br>C.用户身份证号码全局唯一	<br>D.用户的性别不能为男和女以外的其他性别`, answer: "B"
-    },
-    {
-        question: `以下那个表属于事实表?	<br>A.销售订单记录表	<br>B.产品类型表	<br>C.日期表	<br>D.区域表`, answer: "A"
-    },
-    {
-        question: `以下类型数据属于结构化数据的是?	<br>A.数据库表	<br>B.图片	<br>C.音频	<br>D.视频`, answer: "A"
-    },
-    {
-        question: `以下不属于数据聚合函数的是？	<br>A.AVG	<br>B.SUM	<br>C.SUBSTR	<br>D.COUNT`, answer: "C"
-    },
-    {
-        question: `以下哪一个命令，不能取消文件所有者用户的可执行权限？	<br>A.chmod u-x,g-x file	<br>B.chmod ugo-x file	<br>C.chmod 640 file	<br>D.chmod 754 file`, answer: "D"
-    },
-    {
-        question: `以下哪一个命令，不能查看文件内容？	<br>A.wc	<br>B.cat	<br>C.vi	<br>D.more`, answer: "A"
-    },
-    {
-        question: `数据管理能力等级标准第5级为？	<br>A.受管理级	<br>B.稳健级	<br>C.量化管理级	<br>D.优化级`, answer: "D"
-    },
-    {
-        question: `以下OLTP和OLAP的区别正确的是？	<br>A.OLTP作为企业高层进行决策的参考,OLAP则主要供基层人员使用	<br>B.OLTP主要为后台分析，OLAP主要为日常业务操作	<br>C.OLTP单笔吞吐量小，OLAP则单笔吞吐量大	<br>D.OLAP具有实时性，OLTP对时间要求不严格`, answer: "C"
-    },
-    {
-        question: `以下哪一项不属于基础类数据标准？	<br>A.参考数据和主数据标准	<br>B.物理数据模型标准	<br>C.基础指标标准	<br>D.元数据标准`, answer: "C"
-    },
-    {
-        question: `有关数据仓库ODS层的说法错误的是？	<br>A.ODS全称是 Operational Data Store，操作数据存储，是“面向主题的”数据运营层。	<br>B.ODS层用于存储每天的增量数据和变更数据。	<br>C.数据源中的数据，经过抽取、清洗、传输后装入ODS层。	<br>D.在源数据装入ODS层时，可以进行诸如去噪、去重、字段命名规范等一系列操作。`, answer: "B"
-    },
-    {
-        question: `主数据管理的关键活动不包括？	<br>A.定义和维护数据整合架构	<br>B.定义和维护数据匹配规则	<br>C.根据业务规则和数据质量标准对收集到的主数据进行加工清理	<br>D.剖析、分析和评估数据质量`, answer: "D"
-    },
-    {
-        question: `下列有关Kerberos协议认证过程的实现错误的是？	<br>A.依赖于主机操作系统的认证	<br>B.不基于主机地址的信任	<br>C.不要求网络上所有主机的物理安全	<br>D.以假定网络上传送的数据包可以被任意读取、修改和插入数据为前提设计的`, answer: "A"
-    },
-    {
-        question: `元数据是描述数据的数据。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `元数据可应用于血缘分析、影响分析、数据地图等分析应用。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `即席查询是用户根据自己的需求，灵活的选择查询条件，系统能够根据用户的选择生成相应的统计报表。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `BASE64是一种摘要算法，作用是让大容量信息在用数字签名软件签署私人密钥前被"压缩"成一种保密的格式。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `连接查询有内连接和外连接之分，内连接只能实现两个表的查询，外连接可以实现多个表的查询。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `常见的业务系统如ERP、CRM、OA等系统都属于OLAP。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `文件权限'rwx rwx rwx'中第三组rwx代表的是文件所有者所在的组群的读写执行权限。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `使用命令ls-l可以列出一个目录下的所有文件。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `使用GROUP BY分组查询时，SELECT子句后的非聚合函数字段可以是GROUP BY后分组字段之外的字段。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `使用HAVING子句的SQL通常要包含GROUP BY子句。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `组织应定义数据生存周期，并对全生存周期制定唯一的管理策略，降低成本和风险，支撑数据资源管理和数据资产运营。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `数据元定义为用一组属性描述定义、标识、表示和允许值的数据单元。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `网络运营者不得违反收集使用规则使用个人信息。因业务需要，确需扩大个人信息使用范围的，应当征得个人信息主体同意。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `设计并实施数据质量管理工具不属于数据质量管理工作中的关键活动。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `下列哪些属于大数据安全防护手段？	<br>A.数据脱敏	<br>B.数据水印	<br>C.数据溯源	<br>D.访问控制`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪些加密算法是不可逆的？	<br>A.RSA	<br>B.DES	<br>C.SHA	<br>D.MD5`, answer: ["C", "D"], type: "checkbox"
-    },
-    {
-        question: `公司要分析每个月各产品的销售量和收入情况，其中属于度量的是？	<br>A.月份	<br>B.产品类型	<br>C.销售量	<br>D.收入金额`, answer: ["A", "B"], type: "checkbox"
-    },
-    {
-        question: `下列命令哪些可用于文件的压缩或解压缩？	<br>A.tar命令	<br>B.gz命令	<br>C.zip命令	<br>D.touch命令`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `要筛选人事部的男性员工和财务部级别高于5级的男性员工，以下条件正确的是?	<br>A.SEX = '男' AND ((DEPT = '人事部' OR DEPT = '财务部') AND LVL > 5) OR (DEPT = '人事部' AND LVL <= 5)	<br>B.((DEPT = '人事部' OR DEPT = '财务部') AND SEX = '男' AND LVL > 5 ) OR (DEPT = '人事部' AND SEX = '男' AND LVL <= 5)	<br>C.(DEPT = '人事部' AND SEX = '男') OR (DEPT = '财务部' AND SEX = '男 AND LVL > 5)	<br>D.SEX = '男' AND (DEPT = '人事部' OR (DEPT = '财务部' AND LVL > 5))`, answer: ["B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `数据治理的目标是保障数据及其应用过程中的（ ）？	<br>A.运营合规	<br>B.算力融合	<br>C.风险可控	<br>D.价值实现`, answer: ["A", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `对于空缺值的清洗可以采取的策略有？	<br>A.忽略元组	<br>B.人工补全空缺值	<br>C.使用一个全局变量填充空缺值	<br>D.使用属性的平均值、中问值、最大值、最小值或更为复杂的概率统计函数值来填充空缺值`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `HDFS2.0 默认 Block Size大小是多少（  ）。	<br>A.32MB	<br>B.64MB	<br>C.128MB	<br>D.256MB`, answer: "B"
-    },
-    {
-        question: `在计算机中，所有信息存放和处理采用（  ）。	<br>A.ASCII	<br>B.二进制	<br>C.十进制	<br>D.十六进制`, answer: "B"
-    },
-    {
-        question: `将二进制1110111转换成十六进制数是（  ）。	<br>A.77	<br>B.C7	<br>C.D7	<br>D.E7`, answer: "A"
-    },
-    {
-        question: `随着HDFS数据量的增长，以及对于数据使用方式的多样化 ，HDFS的架构局限性就逐渐被放大，NameNode在大规模场景很容易成为瓶颈的主要原因是（  ）。	<br>A.CPU	<br>B.内存	<br>C.磁盘空间	<br>D.网络IO`, answer: "B"
-    },
-    {
-        question: `下面哪个程序（  ）负责 HDFS 数据存储。 	<br>A.NameNode	<br>B.Jobtracker	<br>C.Datanode	<br>D.secondaryNameNode`, answer: "C"
-    },
-    {
-        question: `不具备扩展性的存储架构有（  ）。	<br>A.DAS	<br>B.NAS	<br>C.SAN	<br>D.IP SAN`, answer: "A"
-    },
-    {
-        question: `大数据ETL不包含以下哪些数据处理操作（  ）。	<br>A.数据提取	<br>B.数据转化	<br>C.数据装载	<br>D.数据分析`, answer: "D"
-    },
-    {
-        question: `某计费网元记录用户通话记录，该条数据一般存储单位（  ）。	<br>A.Byte	<br>B.KB	<br>C.MB	<br>D.GB`, answer: "A"
-    },
-    {
-        question: `在centos linux操作系统，查询主机IO使用情况命令是（  ）。	<br>A.ls	<br>B.ps	<br>C.top	<br>D.iostat`, answer: "D"
-    },
-    {
-        question: `应用技术（  ）是运行在用户空间上利用自身提供的数据平面库来收发数据包，绕过了Linux内核协议栈对数据包处理过程。	<br>A.DPDK	<br>B.SOKCET	<br>C.FTP	<br>D.SHELL`, answer: "A"
-    },
-    {
-        question: `大数据所涉及关键技术很多，主要包括采集、存储、管理、分析与挖掘相关技术。其中HBase属于（ ）技术。	<br>A.数据采集	<br>B.数据存储	<br>C.数据管理	<br>D.数据分析与挖掘`, answer: "B"
-    },
-    {
-        question: `以下哪一项属于非结构化数据	<br>A.企业ERP数据	<br>B.财务系统数据	<br>C.视频监控数据	<br>D.日志数据`, answer: "C"
-    },
-    {
-        question: `ftp文件采集协议默认的数据端口是（  ）。	<br>A.20	<br>B.21	<br>C.22	<br>D.23`, answer: "A"
-    },
-    {
-        question: `客户端通过ftp命令登录某ftp服务器，以下哪个是列出远端列表文件命令（  ）。	<br>A.get	<br>B.ls	<br>C.type	<br>D.lcd`, answer: "B"
-    },
-    {
-        question: `客户端通过ftp命令登录某ftp服务器，以下哪项不能查看远端文件信息（  ）。	<br>A.文件名	<br>B.文件大小	<br>C.文件内容	<br>D.文件生成时间`, answer: "C"
-    },
-    {
-        question: `HIVE的内部表其实就是管理表，当我们删除一个管理表时，Hive也会删除这个表中数据。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `KAFKA集群的数量越多越好，最好超过7个，因为节点越多，整个群组的吞吐量就越高。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `宽度优先的策略使用堆栈作为存储结构。深度优先的策略，需要采用队列作为存储结构。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `互联网数据分布在网页不同位置，我们很难采集下来。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `在centos linux操作系统安装vsftpd服务，根据/etc/vsftpd/vsftpd.conf默认配置给出设定功能。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `redis分布式缓存集群扩容内存，需要重启redis服务。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `flume拦截器是Source在将Event写入到Channel之前可以使用拦截器对Event进行各种形式的处理。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `SFTP使用了加密/解密技术，传输效率比普通的FTP要高，但网络安全得到了极大的保证。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `Kettle是一款国外优秀的开源ETL工具，可以在Windows、Linux运行，但不可以UNIX上运行。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `TCP提供的是面向连接的、可靠的数据流传输，而UDP提供的是非面向连接的、不可靠的数据流传输。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `主机访问存储的主要模式包括（  ）。	<br>A.NAS	<br>B.SAN	<br>C.DAS	<br>D.NFS`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `下面哪些（  ）流式数据存储介质。	<br>A.kafka	<br>B.MQ	<br>C.Mysql	<br>D.HDFS`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `以下哪些适用大数据ETL工具（  ）。	<br>A.Kettle	<br>B.Talend	<br>C.DataX	<br>D.Oracle`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `ftp应用协议采集数据文件，属于获取文件命令是（  ）。	<br>A.get	<br>B.put	<br>C.mget	<br>D.mput`, answer: ["A", "C"], type: "checkbox"
-    },
-    {
-        question: `操作系统默认端口及相对的服务，正确说法包括（  ）。	<br>A.21端口：文件传输FTP服务	<br>B.25端口:简单邮件发送服务	<br>C.80端口:HTTP万维网发布服务	<br>D.445端口：安全超文本传输服务`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `Hadoop分布式文件系统的客户端端上传文件的时候，下列哪项正确？	<br>A.数据经过 NameNode 传递给 DataNode。	<br>B.Client 端将文件切分为 Block，依次上传。	<br>C.Client 只上传数据到一台 DataNode，然后由 NameNode 负责 Block 复制工作。	<br>D.以上都不正确`, answer: "B"
-    },
-    {
-        question: `FTP采集在被动模式下，当开启一个 FTP 连接时，提交 PASV 命令。服务器会开启一个任意的端口返回如“227 entering passive mode (127,0,0,1,40,18)”。则服务器上有哪一个端口被开放（  ）。	<br>A.418	<br>B.4018	<br>C.10258	<br>D.40978`, answer: "C"
-    },
-    {
-        question: `Kafka分布式消息集群中是怎么体现消息顺序性，下列哪项正确？	<br>A.每个分区内，每条消息都有一个offset，故只能保证分区内有序。	<br>B.每个主题内，每条消息都有一个offset，故只能保证分区内有序。	<br>C.每个节点内，每条消息都有一个offset，故只能保证分区内有序。	<br>D.以上都不正确`, answer: "A"
-    },
-    {
-        question: `当使用mount镜像设备或文件系统挂载的时候，需要用到的设备名称位于（ ）目录。	<br>A./home	<br>B./bin	<br>C./etc	<br>D./dev`, answer: "D"
-    },
-    {
-        question: `在实验集群的master节点使用jps命令查看进程时，终端出现以下哪项能说明Hadoop主节点启动成功？	<br>A.Namenode,JobTracker, secondaryNameNode	<br>B.Namenode,Datanode, Hmaster	<br>C.Namenode,Datanode, secondaryNameNode	<br>D.Namenode,Datanode, TaskTracker `, answer: "D"
-    },
-    {
-        question: `ftp协议命令中，不属于控制端口的命令是（  ）。	<br>A.cd	<br>B.pwd	<br>C.ls	<br>D.help`, answer: "C"
-    },
-    {
-        question: `Cookie 存储了客户端的一些重要信息，例如身份标识、所在地区等，通常是一个文本文件。在向服务器发送 URL 请求时，可以将文件内容读出，附加在 HTTP 的请求头中，可以免去用户输入信息的麻烦。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `从一个空FIFO中读取数据是会发生阻塞，但从给一个空PIPE中读取数据时不会发生阻塞。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `kafka消费者在某分区内消费消息数据操作顺序是先提交offset，后消费，有可能造成数据的重复。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `在计算中存储数据最小单位是字节。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `各个设备工作在哪个层，正确说法包括（  ）。	<br>A.网卡工作在OSI参考模型的网络层。	"<br>B.集线器HUB工作在OSI参考模型的物理层。
-    "	"<br>C.交换机Switch工作在OSI参考模型的数据链路层。
-    "	"<br>D.路由器Router工作在OSI参考模型的网络层。
-    `, answer: ["B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `动态网页采集技术类型包括（  ）。	<br>A.构造带参数的 URL，利用参数传递动态请求。	<br>B.构造 Cookie 携带参数，利用 HTTP 头部传递动态请求的参数。	<br>C.离线分析 Ajax 的动态请求，使用静态页面采集技术。	<br>D.模拟浏览器技术。`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `某五星级酒店公开招标建设一套“无线网络”系统，以满足商务客人在酒店范围内随时随地高速访问Internet的需要。该项目最适合采用的无线网络技术是（）	<br>A.WiFi	<br>B.Bluetooth	<br>C.BlueRay	<br>D.GPRS`, answer: "A"
-    },
-    {
-        question: `某云计算服务商向电信运营商提供计算能力、存储空间及相应的运营管理服务。按照云计算服务提供的资源层次，该服务类型属于（）	<br>A.IaaS	<br>B.CaaS	<br>C.PaaS	<br>D.SaaS`, answer: "A"
-    },
-    {
-        question: `如果未经授权的实体得到了数据的访问权，这属于破坏了信息的（  ）	<br>A.可用性	<br>B.完整性	<br>C.机密性	<br>D.可控性`, answer: "C"
-    },
-    {
-        question: `以下选项中,不属于生物识别方法的是（）	<br>A.掌纹识别	<br>B.个人标记号识别	<br>C.人脸识别	<br>D.指纹识别`, answer: "B"
-    },
-    {
-        question: `电子政务类型中，属于政府对公众的是（）。	<br>A.G2B	<br>B.G2E	<br>C.G2G	<br>D.G2C`, answer: "D"
-    },
-    {
-        question: `路由器工作在（），通过逻辑地址进行网络之间的信息转发。	<br>A.物理层	<br>B.数据链路层	<br>C.传输层	<br>D.网络层`, answer: "D"
-    },
-    {
-        question: `小王用智能手环来督促自己每天走路10000步，这是将（）应用到移动互联网中，为用户提供智能化服务。	<br>A.用户画像	<br>B.传感技术	<br>C.数据挖掘	<br>D.射频识别`, answer: "B"
-    },
-    {
-        question: `关于TCP和UDP的说法，（）是错误。	<br>A.TCP和UDP都是传输层的协议       	<br>B..TCP是面向连接的传输协议	<br>C.UDP是可靠的传输协议       	<br>D.TCP和UDP都是以IP协议为基础`, answer: "C"
-    },
-    {
-        question: `一个设计良好的软件系统应具有（ ）特征。	<br>A.低内聚、低耦合      	<br>B.高内聚、低耦合	<br>C.高内聚、高耦合    	<br>D.低内聚、高耦合`, answer: "B"
-    },
-    {
-        question: `数据仓库解决方案常常用来实现（ ）。	<br>A.两个或者多个信息系统之间相互访问数据资源	<br>B.企业海量数据的存储和访问	<br>C.企业决策信息  挖掘和提取	<br>D.不同地域企业信息系统之间进行实时的信息共享和数据通信`, answer: "C"
-    },
-    {
-        question: `商业智能（BI）的核心技术是逐渐成熟的数据仓库(DW)和（ ）。	<br>A.联机呼叫技术         	<br>B.数据整理（ODS）技术	<br>C.联机事务处理（OLTP）技术    	<br>D.数据挖掘（DM）技术`, answer: "D"
-    },
-    {
-        question: `1、关于大数据特点的描述，正确的是（ABD）。	<br>A.数据体量巨大	<br>B.  数据处理速度快 	<br>C.  数据价值密度高	<br>D. 数据真实    `, answer: ["A", "B", "D"], type: "checkbox"
-    },
-    {
-        question: `在信息系统中，信息的处理包括信息的输入，信息的删除，信息的修改和信息的统计。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `电子商务涉及信息技术、金融、法律和市场等众多领域。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `电子钱包是电子商务购物活动中的一种支付工具 。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `ipv6 的IP地址的长度为64	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `当前大数据技术的基础是由（ ）首先提出的	<br>A.微软	<br>B.百度	<br>C.谷歌	<br>D.阿里巴巴`, answer: "C"
-    },
-    {
-        question: `大数据的起源是（）	<br>A.金融	<br>B.电信	<br>C.互联网	<br>D.公共管理`, answer: "C"
-    },
-    {
-        question: `根据不同的业务需求来建立数据模型，抽取最有意义的向量，决定选取哪种方法的数据分析角色人员是（ ）	<br>A.数据管理人员	<br>B.数据分析员	<br>C.研究科学家	<br>D.软件开发工程师`, answer: "C"
-    },
-    {
-        question: `（ ）反映数据的精细化程度，越细化的数据，价值越高	<br>A.规模	<br>B.活性	<br>C.关联度	<br>D.颗粒度`, answer: "D"
-    },
-    {
-        question: `数据清洗的方法不包括（ ）。	<br>A.缺失值处理	<br>B.B：噪声数据清除	<br>C.重复数据记录处理	<br>D.一致性检查`, answer: "C"
-    },
-    {
-        question: ` 智能健康手环的应用开发，体现了（ ）的数据采集技术的应用。	<br>A.统计报表	<br>B.网络爬虫	<br>C.API接口	<br>D.传感器`, answer: "D"
-    },
-    {
-        question: `下列关于数据重组的说法中，错误的是（）。	<br>A.数据重组是数据的重新生产和重新采集	"<br>B.数据重组能够使数据焕发新的光芒
-    
-    "	<br>C.数据重组实现的关键在于多源数据融合和数据集成	<br>D.数据重组有利于实现新颖的数据模式创新`, answer: "A"
-    },
-    {
-        question: `智慧城市的构建，不包含（ ）。	<br>A.数字城市	<br>B.物联网	<br>C.联网监控	"<br>D.云计算`, answer: "C"
-    },
-    {
-        question: `大数据的最显著特征是（ ）。	<br>A.数据规模大	<br>B.数据类型多样 	<br>C.数据处理速度快	<br>D.数据价值密度高`, answer: "A"
-    },
-    {
-        question: `美国海军军官莫里通过对前人航海日志的分析，绘制了新的航海路线图，标明了大风与洋流可能发生的地点。这体现了大数据分析理念中的（ ）。	<br>A.在数据基础上倾向于全体数据而不是抽样数据<br>B.在分析方法上更注重相关分析而不是因果分析    <br>C.在分析效果上更追究效率而不是绝对精确  <br>D.在数据规模上强调相对数据而不是绝对数据`, answer: "B"
-    },
-    {
-        question: `下列关于舍恩伯格对大数据特点的说法中，错误的是（）。 	<br>A.数据规模大	<br>B.B：数据类型多样 	<br>C.C：数据处理速度快	<br>D. D：数据价值密度高`, answer: "D"
-    },
-    {
-        question: `当前社会中，最为突出的大数据环境是（）。	<br>A.　A：互联网	<br>B.B：物联网	<br>C. C：综合国力	<br>D. D：自然资源`, answer: "A"
-    },
-    {
-        question: `在数据生命周期管理实践中，（ ）是执行方法。	<br>A.A：数据存储和备份规范	<br>B.B：数据管理和维护	<br>C.　C：数据价值发觉和利用 	<br>D.D：数据应用开发和管理`, answer: "B"
-    },
-    { question: `下列关于网络用户行为的说法中，错误的是（）。 <br>A.　A：网络公司能够捕捉到用户在其网站上的所有行为<br>B.　B：用户离散的交互痕迹能够为企业提升服务质量提供参考   <br>C.　　C：数字轨迹用完即自动删除 <br>D.　D：用户的隐私安全很难得以规范保护`, answer: "C" },
-    {
-        question: `下列关于计算机存储容量单位的说法中，错误的是（ ）。 	<br>A.A：1KB＜1MB＜1GB	<br>B.B：基本单位是字节（Byte）	<br>C.C：一个汉字需要一个字节的存储空间	<br>D. D：一个字节能够容纳一个英文字符`, answer: "C"
-    },
-    { question: `下列关于聚类挖掘技术的说法中，错误的是（ ）。	<br>A.A：不预先设定数据归类类目，完全根据数据本身性质将数据聚合成不同类别   <br>B.　　B：要求同类数据的内容相似度尽可能小	<br>C.　C：要求不同类数据的内容相似度尽可能小   <br>D.D：与分类挖掘技术相似的是，都是要对数据进行分类处理`, answer: "B" },
-    {
-        question: `以下关于大数据的叙述中，哪一项是不恰当的？	<br>A.大数据是仅靠现有数据库管理工具或传统数据处理系统很难处理的大型而复杂的数据集	<br>B.大数据具有数据体量巨大、数据类型繁多、处理速度快等特性	<br>C.大数据的战略意义是实现数据的增值	<br>D.大数据研究中，数据之间的因果关系比关联关系更重要`, answer: "D"
-    },
-    {
-        question: `关于大数据的叙述中，不正确的是：（）	<br>A.大数据的4个特点是体量大，多样性，价值密度低和快速化	<br>B.数据分析与挖掘技术是大数据特有的技术	<br>C.大数据在电商、电信、金融等行业都有巨大的社会价值和产业空间	<br>D.分布式文件系统能提供高吞吐量数据访问，适合在大规模数据集上应用`, answer: "B"
-    },
-    {
-        question: `关于大数据的描述，不正确的是（ ）。	<br>A.大数据分析相比传统的数据仓库应用，具有查询及分析简单的特点	<br>B.大数据的意义不在于掌握庞大的数据信息，而在于对这些数据进行专业化的处理	<br>C.大数据主要依托云计算的分布式处理、分布式数据库和云存储、虚拟化技术	<br>D.大数据具有类型繁多、结构化多样、处理速度快、时效性强的特点`, answer: "A"
-    },
-    {
-        question: `大数据具有的特点包括：大量(Volume) 、高速(Velocity) ① 可验证(Verifiable) ②真实性(Veracity) ③多样(Vahcty) ④价值(Value)	<br>A.①③④	<br>B.②③④	<br>C.①②④	<br>D.①②③`, answer: "B"
-    },
-    {
-        question: `以下哪个选项是目前利用大数据分析技术无法进行有效支持的?（）	<br>A.新型病毒的分析判断	<br>B.天气情况预测	<br>C.个人消费习惯分析及预测	<br>D. 精确预测股票价格`, answer: "D"
-    },
-    {
-        question: `关于大数据和数据仓库技术的描述，不正确的是（）。	<br>A.数据仓库是一个面向主题的、集成的、相对稳定的、反映历史变化的数据集合，用于支持管理决策	<br>B.企业数据仓库的建设是以现有企业业务系统和大量业务数据的积累为基础的，数据仓库一般不支持异构数据的集成	<br>C.大数据分析相比传统的数据仓库应用，其数据量更大，查询分析复杂，且在技术上须依托于分布式，云存储，虚拟化等技术	<br>D.数据仓库的结构通常包含数据源、数据集市、数据分析服务器和前端工具的4个层次`, answer: "B"
-    },
-    {
-        question: `当前社会中，最为突出的大数据环境是（）。	<br>A.互联网	<br>B.物联网	<br>C.综合国力	<br>D.自然资源`, answer: "A"
-    },
-    {
-        question: `与大数据密切相关的技术是（）	<br>A.云计算	<br>B.蓝牙	<br>C.wifi	<br>D.博弈论`, answer: "A"
-    },
-    {
-        question: `在大数据的关键技术中，数据抽取工具ETL是（）过程主要使用的技术。	<br>A.数据采集	<br>B.数据存储	<br>C.数据清洗	<br>D.数据分析`, answer: "A"
-    },
-    {
-        question: `下列关于脏数据的说法中，正确的是( )。	<br>A.格式不规范  	<br>B.编码不统一  	<br>C.意义不明确  	<br>D.与实际业务关系不大  `, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `传统数据密集型行业积极探索和布局大数据应用的表现是( )。	<br>A.投资入股互联网电商行业  	<br>B.打通多源跨域数据  	<br>C.提高分析挖掘能力  	<br>D.自行开发数据产品  `, answer: ["B", "C"], type: "checkbox"
-    },
-    {
-        question: `下列关于大数据的说法中，错误的是()。	<br>A.大数据具有体量大、结构单一、时效性强的特征  	<br>B.处理大数据需采用新型计算架构和智能算法等新技术  	<br>C.大数据的应用注重相关分析而不是因果分析  	<br>D.大数据的应用注重因果分析而不是相关分析  `, answer: ["A", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪项是互联网思维的内容( )	<br>A.患者思维 	<br>B.用户思维 	<br>C.极致思维 	<br>D.大数据思维 `, answer: ["B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `下列关于数据交易市场的说法中，正确的是( )。	<br>A.数据交易市场是大数据产业发展到一定程度的产物   	<br>B.商业化的数据交易活动催生了多方参与的第三方数据交易市场 	<br>C.数据交易市场通过生产数据、研发和分析数据，为数据交易提供帮助  	<br>D.数据交易市场是大数据资源化的必然产物`, answer: ["A", "B", "D"], type: "checkbox"
-    },
-    {
-        question: `大数据产业发展的特点是（ ）	<br>A.规模较大	<br>B.规模较小 	<br>C.增速很快	<br>D.增速缓慢`, answer: ["A", "C"], type: "checkbox"
-    },
-    {
-        question: `智慧城市是智能化的数字城市，是数字城市功能的一种延伸、拓展和升华，它通过物联网把物理城市与数字城市无缝连接起来，利用云计算技术对实时感知的大数据进行处理并提供智能化服务。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `啤酒与尿布的经典案例，充分体现了实验思维在大数据分析理念中的重要性。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `对于企业来说，给用户进行各种促销或者实施运营策略的时机也比较重要，而且对不同兴趣偏好的用户最好集中处理。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `对于大数据而言，最基本、最重要的要求就是减少错误、保证质量。因此，大数据收集的信息量要尽量精确。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `具备很强的报告撰写能力，可以把分析结果通过文字、图表、可视化等多种方式清晰地展现出来，能够清楚地论述分析结果及可能产生的影响，从而说服决策者信服并采纳其建议，是数据分析能力对大数据人才的基本要求。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `谷歌流感趋势充分体现了数据重组和扩展对数据价值的重要意义。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `决策树是一种基于树形结构的预测模型，每一个树形分叉代表一个分类条件，叶子节点代表最终的分类结果，其优点在于易于实现，决策时间短，并且适合处理非数值型数据。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `对于企业来说，给用户进行各种促销或者实施运营策略的时机也比较重要，而且对不同兴趣偏好的用户最好集中处理。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `信息生命周期管理是据生命周期管理的来源，最早由英国企业提出。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `简单随机抽样，是从总体N个对象中任意抽取n个对象作为样本，最终以这些样本作为调查对象。在抽取样本时，总体中每个对象被抽中为调查样本的概率可能会有差异。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `在噪声数据中，波动数据比离群点数据偏离整体水平更大。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `相比依赖于小数据和精确性的时代，大数据因为更强调数据的（），帮助我们进一步接近事实的真相。	<br>A.安全性	<br>B.完整性和混杂性	<br>C.完整性	<br>D.混杂性`, answer: "B"
-    },
-    {
-        question: `以下哪种方法不属于特征选择的标准方法？（）	<br>A.抽样	<br>B.嵌入	<br>C.过滤	<br>D.包装`, answer: "A"
-    },
-    {
-        question: `数据清洗的方法不包括（）	<br>A.缺失数据处理	<br>B.噪声数据清楚	<br>C.数据一致性检查	<br>D.数据可视化`, answer: "D"
-    },
-    {
-        question: `以下哪个值可以描述集中趋势?()	<br>A.均值	<br>B.方差	<br>C.标准差	<br>D.四分位数`, answer: "A"
-    },
-    {
-        question: `用户画像的作用不包括（）	<br>A.精准营销	<br>B.标签准备	<br>C.数据挖掘	<br>D.降低服务质量`, answer: "D"
-    },
-    {
-        question: `从大量数据中提取知识的过程通常称为	<br>A.数据挖掘	<br>B.数据清洗	<br>C.人工智能	<br>D.数据仓库`, answer: "A"
-    },
-    {
-        question: `一个活动页面被浏览了是5000次，其中去重后的ip数是500个，那么该页面的pv是多少？（）	<br>A.500	<br>B.5000	<br>C.1000	<br>D.5500`, answer: "B"
-    },
-    {
-        question: `下列关于数据交易市场的说法中错误的是（）	<br>A.数据交易市场是大数据产业发展到一定程度的产物。	<br>B.商业化的数据交易活动，催生了多方参与的第三方数据交易市场。	<br>C.数据交易市场通过生产数据、研发和分析数据，为数据交易提供帮助。	<br>D.数据交易市场是大数据资源化的必然产物。`, answer: "C"
-    },
-    {
-        question: `下列论据中，能够支撑“大数据无所不能”的观点的是（）	<br>A.互联网金融打破了传统的观念和行为	<br>B.大数据存在泡沫	<br>C.大数据具有非常高的成本	<br>D.个人隐私泄露与信息安全担忧`, answer: "A"
-    },
-    {
-        question: `不属于网络运营者加强个人信息保护的措施是（）	<br>A.分类	<br>B.备份	<br>C.加密	<br>D.共享`, answer: "D"
-    },
-    {
-        question: `大数据不少要教机器像人一样思考，相反，它是（）	<br>A.把数据算法运用到海量的数据上来分析事情发生的可能性	<br>B.预测与惩罚	<br>C.被视为人工智能的一部分	<br>D.被视为一种机器学习`, answer: "A"
-    },
-    {
-        question: `用数据的方式来定位产品运营策略应该以什么为导向？（）	<br>A.客户	<br>B.销售	<br>C.利润	<br>D.数据`, answer: "C"
-    },
-    {
-        question: `下列关于用户“标签”的说法错误的是？（）	<br>A.构建客户画像的核心工作	<br>B.通过对客户信息分析而来的	<br>C.高度精炼的特征标志	<br>D.随便给客户起外号`, answer: "D"
-    },
-    {
-        question: `活动促销的本质是（）	<br>A.免单	<br>B.秒杀	<br>C.折扣	<br>D.销售`, answer: "D"
-    },
-    {
-        question: `下列哪项是通过地理位置可以分析出来的信息（）	<br>A.家庭住址	<br>B.工作地点	<br>C.颜值	<br>D.体重`, answer: "B"
-    },
-    {
-        question: `对于大型、中等、小型规模的公司而言，大数据对中等规模的公司帮助最大。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `接到临时数据需求第一步是写SQL脚本	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `在数据挖掘算法的选择上，按照算法准确率最高进行选择	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `ARPPU是只每付费用户平均收益	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `对于大数据而言，最基本最重要的要求就是减少错误，保证质量，因此大数据收集的信息量要尽量精确。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `大数据产业发展具有规模较大、增速很快、多产业交叉融合等特点。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据再利用的意义在于挖掘数据的潜在价值	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `网络运营者以经营为目的收集重要数据或个人敏感信息的，应当明确数据安全责任人。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据化就是数字化，是相互等同的关系。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `网络运营者可以以改善服务质量为由通过默认授权的形式采集个人信息。	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `大数据的特征包括	<br>A.容量大	<br>B.速度快	<br>C.多样性	<br>D.价值高`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `下列哪些要素属于场景梳理中需要涉及的？（）	<br>A.当前问题	<br>B.期望目标	<br>C.解决思路	<br>D.可执行的验证标准`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `常用的长期趋势分析方法有（）	<br>A.回归方程法	<br>B.移动平均法	<br>C.指数平滑法	<br>D.相关分析法`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `以下哪些是位置类大数据的应用场景？（）	<br>A.区域安全	<br>B.城市规划	<br>C.智慧旅游	<br>D.商铺选址`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪些不是属于用户标识？（）	<br>A.IMEI	<br>B.cookie	<br>C.经纬度	<br>D.年龄`, answer: ["C", "D"], type: "checkbox"
-    },
-    {
-        question: `下面哪种不属于数据预处理的方法？（）	<br>A.变量代换	<br>B.离散化	<br>C.聚集	<br>D.估计遗漏值`, answer: "D"
-    },
-    {
-        question: `当不知道数据所带标签时，可以使用哪种技术促使带同类标签的数据和带其他标签的数据分离	<br>A.分类	<br>B.聚类	<br>C.关联分析	<br>D.马尔科夫链`, answer: "B"
-    },
-    {
-        question: `在抽样方法中，当合适的样本容量很难确定时，可以使用的抽样方法是（）	<br>A.有放回的简单随机抽样 	<br>B.无放回的简单随机抽样 	<br>C.分层抽样	<br>D.渐进抽样`, answer: "D"
-    },
-    {
-        question: `通过调查发现，亚马逊一些“冷门”书籍的销售比例正以高速成长，预估未来可占整个书市的一半，从此使冷门不再冷门。这说明的是运营中的（ ）	<br>A.数据驱动	<br>B.长尾理论	<br>C.需求驱动	<br>D.梅特卡菲定律`, answer: "B"
-    },
-    {
-        question: `以下哪个指标可以评估用户粘性	<br>A.留存数据	<br>B.当天活跃数据	<br>C.当天收入数据	<br>D.新增用户数据`, answer: "A"
-    },
-    {
-        question: `数据的状态是如何变化的？（）	<br>A.数据-知识-信息-智慧-赋能	<br>B.数据-信息-知识-智慧-赋能	<br>C.数据-信息-赋能-知识-智慧	<br>D.信息-数据-知识-智慧-赋能`, answer: "B"
-    },
-    {
-        question: `市场拓展的落脚点是对用户行为的分析	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据存储使用的数据库类型会影响数据分析结果的准确性	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `数据粒度是指数据仓库小数据单元的详细程度和级别	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `网络运营者应当参照国家有关标准，采用数据分类、备份、加密等措施加强对个人信息和重要数据保护。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `网络运营者向他人提供个人信息前，应当评估可能带来的安全风险，并征得个人信息主体同意。下列情况除外（）	<br>A.从合法公开渠道收集且不明显违背个人信息主体意愿	<br>B.个人信息主体主动公开。	<br>C.经过匿名化处理。	<br>D.执法机关依法履行职责所必需`, answer: "ABCDE"
-    },
-    {
-        question: `以下哪些会影响数据结果的准确性？（）	<br>A.口径的合理及统一	<br>B.适当的建模方法	<br>C.数据的完整性	<br>D.存储使用的数据库类型`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `以下关于数据仓库的叙述中，正确的是（ ）	<br>A.数据仓库主要用于支持决策管理	<br>B.数据仓库的数据源相对比较单一	<br>C.存放在数据仓库中的数据一般是实时更新的	<br>D.数据仓库为企业的特定应用服务、强调处理的响应时间，数据的安全性和完整性等`, answer: "A"
-    },
-    {
-        question: `企业中对含义不一致的信息进行纠正操作，叫做（  ）	<br>A.数据清洗	<br>B.数据冗余	<br>C.数据降维	<br>D.数据转置`, answer: "A"
-    },
-    {
-        question: `哪个 SQL 关键词用于对结果集进行排序？（  ）。	<br>A.ORDER	<br>B.SORT BY	<br>C.SORT	<br>D.ORDER BY`, answer: "D"
-    },
-    {
-        question: `客户关系图表属于下列那种模型的范畴？（  ）	<br>A.概念模型	<br>B.物理模型	<br>C.逻辑模型	<br>D.Odoo模型`, answer: "B"
-    },
-    {
-        question: `通过 SQL，如何返回 "Customer" 表中记录的数目？（  ）	<br>A.SELECT COLUMNS() FROM Customer	<br>B.SELECT COLUMNS(*) FROM Customer	<br>C.SELECT COUNT() FROM Customer	<br>D.SELECT COUNT(*) FROM Customer`, answer: "D"
-    },
-    {
-        question: `SQL语言允许使用通配符进行字符串匹配的操作，其中‘%’可以表示（  ）	<br>A.零个字符	<br>B.1个字符	<br>C.多个字符	<br>D.以上都是`, answer: "D"
-    },
-    {
-        question: `下面哪个选项为事实表数据？（  ）	<br>A.货物出售记录	<br>B.时间	<br>C.售货员	<br>D.商品`, answer: "A"
-    },
-    {
-        question: `通过 SQL，如何从 "CUST" 表中选取 "CUST_NM" 列？（  ）	<br>A.SELECT CUST.CUST_NM	<br>B.SELECT CUST_NM FROM CUST	<br>C.EXTRACT CUST_NM FROM CUST	<br>D.以上都不对`, answer: "B"
-    },
-    {
-        question: `哪条 SQL 语句可返回唯一不同的值？（  ）	<br>A.SELECT DIFFERENT	<br>B.SELECT DISTINCT	<br>C.SELECT UNIQUE	<br>D.SELECT PRIMARY`, answer: "B"
-    },
-    {
-        question: `在关系表中，下列哪种属性不能承担主列关键字？（  ）	<br>A.身份证号	<br>B.银行卡号	<br>C.加密电文	<br>D.企业标识码`, answer: "C"
-    },
-    {
-        question: `数据表的多维索引作用是（  ）	<br>A.使数据表更节省存储空间	<br>B.加快数据存储速度	<br>C.表格格式美观大方	<br>D.加快数据查找效率`, answer: "D"
-    },
-    {
-        question: `通过 SQL，如何从 "Customer" 表中选取所有的列（  ）	<br>A.SELECT [all] FROM Customer	<br>B.SELECT Customer	<br>C.SELECT * FROM Customer	<br>D.SELECT *.Customer`, answer: "C"
-    },
-    {
-        question: `数据处理中，基本不可分割的逻辑单位是（  ）	<br>A.数据项	<br>B.记录	<br>C.文件	<br>D.数据库`, answer: "A"
-    },
-    {
-        question: `通过 SQL，您如何在 ""Customer"" 表中删除 ""FirstName"" 等于 ""Fred"" 的纪录？（  ） <br>A.DELETE FROM Customer WHERE FirstName = 'Fred'	<br>B.DELETE FirstName='Fred' FROM Customer	<br>C.DELETE ROW FirstName='Fred' FROM Customer <br>D.以上都不对`, answer: "A"
-    },
-    {
-        question: `大数据时代，下列说法正确的是（  ）。	<br>A.收集数据很简单	<br>B.数据是最核心的部分	<br>C.对数据的分析技术和技能是最重要的	<br>D.数据非常重要，一定要很好的保护起来，防止泄露`, answer: "B"
-    },
-    {
-        question: `UNION ALL 对两个结果集进行并集操作, 不包括重复行,相当于distinct, 同时进行默认规则的排序	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `索引只能建在数据表的一列上	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `视图是在基本表之上建立的表，也占用物理空间	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `使用数据仓库可以解决数据孤岛	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `联机事务处理（OLTP）是决策支持系统的有机组成部分，利用存储在数据仓库中的数据完成各种分析，并以直观易懂的形式将分析结果返回给决策分析人员	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `当所列出的某个条件为 true 时，OR 运算符会显示记录。当列出的所有条件为 true 时，AND 运算符会显示记录	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `查询不及格的课程，并按课程号从大到小排列，脚本为：SELECT cid,sid FROM SC WHERE score <60 ORDER BY cid; 其中cid为课程号，sid为学号	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `对缺失的数据值进行处理，是数据清洗的一种方法	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `下面脚本是正确的：
-    select *
-    from Customer
-    where FirstName like ('%DAVI%','MOSTEL%'，'ABC')	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `数据用于基本用途的价值会减少，但潜在价值依然强大	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `表与表之间常用的关联方式包括（  ）。	<br>A.内关联	<br>B.左关联	<br>C.右关联	<br>D.左右关联`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `数据仓库的特点有哪些？	<br>A.面向主题	<br>B.集成的	<br>C.相对稳定的	<br>D.反应历史变化的`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `查询Score表中成绩为85，86或88的记录	<br>A.SELECT * FROM SCORE
-    WHERE DEGREE >=85 and DEGREE<=88;   <br>B.SELECT * FROM SCORE
-    WHERE DEGREE=85 OR DEGREE=86 OR DEGREE=88;  <br>C.
-    SELECT * FROM SCORE
-    WHERE DEGREE BETWEEN 85 AND 88; <br>D.SELECT * FROM SCORE
-    WHERE DEGREE IN (85,86,88);
-    `, answer: ["B", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪些函数是聚集函数（  ）。	<br>A.count	<br>B.max	<br>C.sum	<br>D.row_number`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `数据仓库的设计步骤包含哪些？	<br>A.概念模型设计	<br>B.技术准备工作	<br>C.逻辑模型设计	<br>D.物理模型设计`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `上海男性互联网从业人数，该指标包含的维度数据不包含（  ）	<br>A.城市	<br>B.性别	<br>C.行业	<br>D.从业人数`, answer: "D"
-    },
-    {
-        question: `查询最低分大于70，最高分小于90的Sno列，下列脚本正确的是（  ）	<br>A.SELECT SNO FROM SCORE
-    GROUP BY SNO
-    WHERE
-    MAX(DEGREE)<90 AND MIN(DEGREE)>70;  <br>B.SELECT SNO FROM SCORE
-    GROUP BY SNO
-    HAVING MAX(DEGREE)<90 AND MIN(DEGREE)>70;   <br>C.SELECT SNO FROM SCORE
-    WHERE DEGREE<90 AND DEGREE>70
-    GROUP BY SNO
-    ORDER BY DEGREE
-    ;   <br>D.SELECT SNO
-    FROM SCORE
-    GROUP BY SNO
-    ORDER BY MAX(DEGREE)<90 AND MIN(DEGREE)>70;`, answer: "B"
-    },
-    {
-        question: `多维报表是指（  ）	<br>A.在多个维度上观察全员操作	<br>B.不同维度格式不同叠加展示	<br>C.旋转数据集的部分维度	<br>D.在线分析或联机分析`, answer: "B"
-    },
-    {
-        question: `查询姓“李”的老师的个数，脚本可以为（   ）	<br>A.SELECT COUNT(TEACHER.TID)FROM TEACHER WHERE TEACHER.TNAME LIKE'李%'	<br>B.SELECT COUNT(TEACHER.TID)FROM TEACHER WHERE TEACHER.TNAME LIKE'%李%'	<br>C.SELECT COUNT(TEACHER.TID)FROM TEACHER WHERE TEACHER.TNAME LIKE'%李%' GROUP BY TEACHER.TNAME	<br>D.SELECT COUNT(TEACHER.TID)FROM TEACHER WHERE TEACHER.TNAME LIKE'李%' GROUP BY TEACHER.TNAME`, answer: "A"
-    },
-    {
-        question: `数据仓库的最终目的是	<br>A.收集业务需求	<br>B.建立数据仓库逻辑模型	<br>C.开发数据仓库的应用分析	<br>D.为用户和业务部门提供决策支持`, answer: "D"
-    },
-    {
-        question: `支撑大数据业务的基础是	<br>A.数据科学	<br>B.数据应用	<br>C.数据硬件	<br>D.数据人才`, answer: "B"
-    },
-    {
-        question: `客户电话属于度量	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `元数据是数据的数据	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `维度表一般是有主键的	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `group  by 的字段可以不出现在SELECT中展示	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `多维分析包含哪些操作？	<br>A.切片	<br>B.切块	<br>C.钻取	<br>D.旋转`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `查询和“李军”同性别的所有同学的Sname（假设只有一个叫李军的），下列sql脚本正确的是（  ）。	<br>A.SELECT SNAME FROM STUDENT
-    WHERE SSEX=(SELECT SSEX FROM STUDENT           WHERE SNAME='李军');
-    <br>B.SELECT A.SNAME
-    FROM STUDENT AS A, STUDENT AS B
-    WHERE A.SSEX=B.SSEX
-    AND A.CLASS=B.CLASS
-    AND B.SNAME='李军';<br>C.SELECT A.SNAME
-    FROM STUDENT AS A, STUDENT AS B
-    WHERE A.SSEX=B.SSEX
-    AND B.SNAME='李军';<br>D.SELECT SNAME FROM STUDENT
-    WHERE SSEX in  (SELECT SSEX FROM STUDENT     WHERE SNAME='李军');`, answer: ["A", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `使用留出法进行数据集划分，为了保证数据分布的一致性，通常采用（  ）方法。	<br>A.随机抽样	<br>B.分层抽样	<br>C.系统抽样	<br>D.整群抽样`, answer: "B"
-    },
-    {
-        question: `哪个算法不仅关注同时出现的事件，而且关注事件出现的先后顺序	<br>A.关联规则	<br>B.回归	<br>C.序列	<br>D.聚类`, answer: "C"
-    },
-    {
-        question: `（  ）不适合用于缺失值处理	<br>A.删除	<br>B.替换	<br>C.随机生成	<br>D.插补`, answer: "C"
-    },
-    {
-        question: `标准正态分布也叫（  ）分布	<br>A.高斯	<br>B.泊松	<br>C.伯努利	<br>D.柯西`, answer: "A"
-    },
-    {
-        question: `一般来说，下列哪种方法常用来预测连续独立变量？	<br>A.线性回归	<br>B.逻辑回归	<br>C.线性回归和逻辑回归都行	<br>D.以上说法都不对`, answer: "A"
-    },
-    {
-        question: `以下哪个不是分类算法？	<br>A.决策树	<br>B.朴素贝叶斯	<br>C.K近邻	<br>D.K均值`, answer: "D"
-    },
-    {
-        question: `以下哪项不是自然语言处理NLP的应用	<br>A.机器翻译	<br>B.语音搜索引擎	<br>C.拼写校正	<br>D.图像识别`, answer: "D"
-    },
-    {
-        question: `关于欠拟合（under-fitting），下面哪个说法是正确的？	<br>A.训练误差较大，测试误差较小	<br>B.训练误差较小，测试误差较大	<br>C.训练误差较大，测试误差较大	<br>D.训练误差较小，测试误差较小`, answer: "C"
-    },
-    {
-        question: `深度学习中，RNN是以下哪项的缩写	<br>A.卷积神经网络	<br>B.循环神经网络	<br>C.深度神经网络	<br>D.卷积核`, answer: "B"
-    },
-    {
-        question: `通过聚集多个分类器的预测来提高分类准确率的技术称为	<br>A.集成(ensemble)	<br>B.聚集(aggregate)	<br>C.合并(combination)	<br>D.投票(voting)`, answer: "A"
-    },
-    {
-        question: `分析发现,使用携程APP的用户很大概率也使用了百度地图APP,这属于数据挖掘的哪类应用	<br>A.关联规则	<br>B.聚类	<br>C.分类	<br>D.回归`, answer: "A"
-    },
-    {
-        question: `将原始数据进行集成、变换、维度规约、维度衍生是以下哪项任务	<br>A.数据预处理	<br>B.数据挖掘	<br>C.机器学习	<br>D.知识发现`, answer: "A"
-    },
-    {
-        question: `以下哪种方法不属于特征工程	<br>A.降维	<br>B.生成新特征	<br>C.随机抽样	<br>D.特征选择`, answer: "C"
-    },
-    {
-        question: `某地市公司有10000个基站，希望实施不同的维护策略，但无法确定按哪些指标进行划分更合理，此时可以采用什么方法对这些基站进行分组	<br>A.分类	<br>B.聚类	<br>C.关联规则	<br>D.序列分析`, answer: "B"
-    },
-    {
-        question: `下列哪个不属于神经网络中的层次	<br>A.输入层	<br>B.隐藏层	<br>C.跳转层	<br>D.输出层`, answer: "C"
-    },
-    {
-        question: `数据规范化是将不同变化范围的值映射到相同的固定范围，且该范围只能是[0,1]区间	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `基于树的算法，如随机森林等，不需要做数据归一化	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据预处理对数据分析与挖掘至关重要	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `为了评估分类模型的准确性，应该把历史数据分为训练集和测试集	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `分类属于无监督的机器学习算法	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `决策树算法中增加树的深度有助于减少训练时间	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `贝叶斯网络是用来表示一组变量之间为概率关系的图像模型	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `可以为神经网络模型设置多个隐藏层	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `kmeans的基本思想是最小化所有数据到其所属簇中心的距离的平方和	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `当你使用较小的数据集进行机器学习时，容易产生过度拟合，使用较大的数据量能避免过度拟合现象	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据挖掘包括以下哪些步骤？	<br>A.商业理解	<br>B.数据理解	<br>C.数据准备	<br>D.数据建模`, answer: "ABCDEF"
-    },
-    {
-        question: `数据预处理包括哪些过程？	<br>A.数据清理	<br>B.数据标准化	<br>C.数据降维	<br>D.数据训练`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `特征筛选有哪些好处？	<br>A.缩短模型训练时间	<br>B.解决样本不平衡问题	<br>C.简化模型，避免维度过多产生维度灾难	<br>D.增加模型的可解释性，降低模型的过拟合风险`, answer: ["A", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪些属于有监督学习	<br>A.求数据的集群	<br>B.语音识别	<br>C.数据降维	<br>D.时间序列预测`, answer: ["B", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪些是机器学习框架	<br>A.Keras	<br>B.Tensorflow	<br>C.Torch	<br>D.Scikit-learn`, answer: "ABCDEF"
-    },
-    {
-        question: `SVM中的核技巧（Kernal trick）的作用包括以下哪项？	<br>A.特征降维	<br>B.特征升维	<br>C.防止过拟合	<br>D.以上说法都不对`, answer: "C"
-    },
-    {
-        question: `一个公司薪资水平中位数是￥35000，排名25%和75%的薪资分别是￥21000和￥53000，如果某人的薪资是￥1，它可以被看作是异常值吗？	<br>A.可以	<br>B.不可以	<br>C.需要更多的信息来判断	<br>D.以上说法都不对`, answer: "C"
-    },
-    {
-        question: `评估模型之后，得出模型存在偏差，下列哪种方法可能解决这一问题	<br>A.减少模型中特征的数量	<br>B.向模型中增加更多的特征	<br>C.增加更多的数据	<br>D.B 和 C`, answer: "B"
-    },
-    {
-        question: `点击率的预测是一个数据比例不平衡问题（比如训练集中样本呈阴性的比例为99%，阳性的比例是1%），如果我们用这种数据建立模型并使得训练集的准确率高达99%。我们可以得出结论是	<br>A.模型的准确率非常高，我们不需要进一步探索	<br>B.模型不好，我们应建一个更好的模型	<br>C.无法评价模型	<br>D.以上都不正确`, answer: "B"
-    },
-    {
-        question: `SVM（支持向量机）与LR（逻辑回归）的数学本质上的区别是什么	<br>A.损失函数	<br>B.是否有核	<br>C.是否支持多分类	<br>D.其余选项皆错`, answer: "A"
-    },
-    {
-        question: `不属于决策树的特征选择的方法是	<br>A.信息增益率	<br>B.信息增益	<br>C.关联分析	<br>D.基尼`, answer: "C"
-    },
-    {
-        question: `随着模型复杂度的上升，训练误差会逐渐减少，测试误差也会逐渐减少	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `如果两个变量相关，他们一定是线性关系	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `K-均值算法中的K是指算法进行K次迭代	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `学习率决定了下降的步伐大小，下降的步伐大小非常重要，因为如果太小则找到函数最小值的速度就很慢，如果太大，则可能会出现overshoot the minimum的现象	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `衡量数据离散趋势的指标包括	<br>A.极差	<br>B.标准差	<br>C.众数	<br>D.均值`, answer: ["A", "B"], type: "checkbox"
-    },
-    {
-        question: `下列哪些假设是我们推导线性回归参数时遵循的	<br>A.X 与 Y 有线性关系（多项式关系）	<br>B.模型误差在统计学上是独立的	<br>C.误差一般服从 0 均值和固定标准差的正态分布	<br>D.X 是非随机且测量没有误差的`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪些管理规定对信息安全及个人隐私进行了保护（）	<br>A.《互联网行业的自律公约》	<br>B.《治安管理处罚条例》	<br>C.《关于加强网络信息保护的决定》	<br>D.《信息安全保护条例》`, answer: "D"
-    },
-    {
-        question: `大数据科学关注大数据网络发展和运营过程中（）大数据的规律及其与自然和社会活动之间的关系	<br>A.大数据网络发展和运营过程	<br>B.规划建设运营管理	<br>C.规律和验证	<br>D.发现和验证`, answer: "D"
-    },
-    {
-        question: `下列关于大数据的说法，错误的是（）	<br>A.大数据具有体量大，结构单一，时效性强的特征	<br>B.处理大数据需要智能算法等新技术	<br>C.大数据应用注重相关分析	<br>D.大数据应用的目的在于发现新知识合洞察并进行科学决策`, answer: "A"
-    },
-    {
-        question: `在数据生命周期管理实践中（）是执行方法	<br>A.数据存储和备份规范	<br>B.数据管理和维护	<br>C.数据价值发觉和利用	<br>D.数据应用开发和管理`, answer: "B"
-    },
-    {
-        question: `大数据的利用过程是（）	<br>A.采集-统计-清洗-挖掘	<br>B.采集-挖掘-统计-清洗	<br>C.采集-清洗-挖掘-统计	<br>D.采集-清洗-统计-挖掘`, answer: "D"
-    },
-    {
-        question: `Hive中所有的数据都存储在（）中	<br>A.HDFS	<br>B.HIVE客户端本地目录	<br>C.Hadoop集群某个节点	<br>D.临时目录`, answer: "A"
-    },
-    {
-        question: `对于最小粒度的任务，Hive查询的反应时间约为（）	<br>A.几微秒	<br>B.几毫秒	<br>C.几秒	<br>D.几分钟`, answer: "D"
-    },
-    {
-        question: `云计算使得使用信息的存储是一个（）的方式，可以大大节约网络成本	<br>A.密集式	<br>B.分布式	<br>C.单一式	<br>D.密闭式`, answer: "B"
-    },
-    {
-        question: `（）年，部分计算机专家首次提出大数据概念	<br>A.2010	<br>B.2011	<br>C.2001	<br>D.2008`, answer: "D"
-    },
-    {
-        question: `下列关于网络用户行为的说法中，错误的是（）	<br>A.网络功能能否捕捉到网络用户的所有行为	<br>B.用户离散的交互痕迹能否为企业提升服务质量	<br>C.数据轨迹用完即自动删除	<br>D.用户隐私安全很难得到安全保护`, answer: "D"
-    },
-    {
-        question: `当前社会中，最为突出的大数据环境是（）	<br>A.物联网	<br>B.综合国力	<br>C.互联网	<br>D.自然资源`, answer: "C"
-    },
-    {
-        question: `（）反映数据的精细化程度，越细化的数据，价值越高	<br>A.规模	<br>B.活性	<br>C.关联度	<br>D.颗粒度`, answer: "C"
-    },
-    {
-        question: `大数据环境下的隐私骚扰，主要标现为	<br>A.个人信息的被识别和暴露	<br>B.用户画像的生成	<br>C.恶意广告的推送	<br>D.病毒入侵`, answer: "A"
-    },
-    {
-        question: `下列企业中，最有可能成为典型的数据资产动营商的是（）	<br>A.物联网企业	<br>B.互联网企业	<br>C.云计算企业	<br>D.电信运营商`, answer: "D"
-    },
-    {
-        question: `对线下零售而言，做好大数据分析应用的前提是（）	<br>A.增加统计种类	<br>B.扩大营业面积	<br>C.增加数据来源	<br>D.开展优惠促销`, answer: "C"
-    },
-    {
-        question: `对于大数据而言，最基本、最重要的要求就是减少错误，保证数据质量，因此，大数据的采集的信息要尽量精确	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `大数据的价值重在挖掘，而挖掘就是分析	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `物联网的处理技术应用于农业上，可以对动物疾病、植物病虫害，通过传感器进行远程诊断	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `《促进大数据发展行动纲要》指出，要加快政府数据开放共享，推动资源整合，提升治理能力	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `移动互联网实现了人人相连，人物相连，物物相连	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `当前大数据产业发展的特点是规模较大、增速快、多产业融合	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `大数据需要新的处理模式才能具有更强的决策力，洞察发现力和流程优化能力	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `习近平总书记指出，网信事业代表着新的生产力，新的发展方向，可以在践行新发展理念上先行一步	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据资产型企业产品线的盈利，主要通过提供收费服务来获取	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `当前，企业提供的大数据解决方案大多基于Hadoop 开源项目	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `大数据中数据的来源包括（）	<br>A.互联网数据	<br>B.实时数据	<br>C.探测数据	<br>D.传感器数据`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `建立大数据需要设计一个什么样的大型系统（）	<br>A.能够把应用放在合适的平台上	<br>B.能够开发出相应应用	<br>C.能够存储数据	<br>D.能够处理数据`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `国务院《关于印发促进大数据发展行动纲要的通知》，要建立（）的新的管理机制	<br>A.用数据管理	<br>B.用数据创新	<br>C.用数据决策	<br>D.用数据说话`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `IBM公司用3个V来描述大数据的三个基本特征，这3V是（）	<br>A.体量	<br>B.规模	<br>C.多样性	<br>D.复杂性`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `大数据的价值体现在（）	<br>A.大数据给思维方式带来了冲击	<br>B.大数据为政策制定提供科学论据	<br>C.大数据助力智慧城市提升公共服务水平	<br>D.大数据实现了精准营销`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `Hive 查询语言中的算术操作符的返回结果是（）类型的	<br>A.Number	<br>B.Int	<br>C.Bigint	<br>D.String`, answer: "A"
-    },
-    {
-        question: `按粒度大小的顺序，Hive 数据被组成为:数据库，表格, （）和桶	<br>A.元组	<br>B.栏	<br>C.分割	<br>D.行`, answer: "C"
-    },
-    {
-        question: `Hive查询语言和 SQL的一个不同之处在于（）操作	<br>A.Group By	<br>B.Join	<br>C.Partition	<br>D.Union`, answer: "C"
-    },
-    {
-        question: `MapReduce的Map函数产生很多的（）	<br>A.key	<br>B.value	<br>C.<key,value>	<br>D.Hash`, answer: "C"
-    },
-    {
-        question: `Hive建表语句中partitioned by，clustered by分别表示（）	<br>A.索引，分桶	<br>B.分桶，分区	<br>C.分区，分桶	<br>D.分区，索引`, answer: "C"
-    },
-    {
-        question: `下列哪项不是Hive中常用的数据类型（）	<br>A.BIGINT	<br>B.DOUBLE	<br>C.STRING	<br>D.USHORT`, answer: "D"
-    },
-    {
-        question: `解决数据倾斜的思路是将key相对分散，并且数据量小的表放在join的左边，这样可以有效减少内存溢出错误发生的几率	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hive支持一条一条用insert插入数据	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `如果数据文件数据是纯文本，可以使用STORED AS TEXTFILE创建Hive表	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hive创建表如果相同名字的表已经存在，则抛出异常。用户可以用 IF NOT EXIST 选项来忽略这个异常	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hive中不支持如下的DML操作包括（）	<br>A.INSERT	<br>B.UPDATE	<br>C.DELETE	<br>D.SELECT`, answer: ["B", "C"], type: "checkbox"
-    },
-    {
-        question: `关于Hive中内部表和外部表的说法对的是（）	<br>A.删除一个内部表的同时会同时删除表的元数据和数据	<br>B.删除一个内部表的同时不会同时删除表的元数据和数据	<br>C.删除一个外部表，同时删除元数据和数据	<br>D.删除一个外部表，只删除元数据而保留数据`, answer: ["A", "D"], type: "checkbox"
-    },
-    {
-        question: `Hive支持in|not in子查询的语法	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `通常情况下，MAP/REDUCE作业会通过input的目录产生一个或者多个map任务	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `如果数据文件数据是纯文本，可以使用STORED AS TEXTFILE创建Hive表	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hive创建表如果相同名字的表已经存在，则抛出异常。用户可以用 IF NOT EXIST 选项来忽略这个异常	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hive表数据一旦导入，则不可修改。要么drop掉整个表，要么建立新的表，导入新的数据。	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hive最重视的性能是可测量性，延展性，容错性和对于输入格式的宽松匹配性	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hive中支持的存储格式有（）	<br>A.TextFile	<br>B.SequenceFile	<br>C.RCFile	<br>D.LZOFile`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `Hive中包含以下数据模型（）	<br>A.Table	<br>B.External Table	<br>C.Partition 	<br>D.Bucket`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `Hadoop fs中的 -get 和 -put命令操作对象是	<br>A.文件	<br>B.目录	<br>C.两者都是	<br>D.两者都不是`, answer: "C"
-    },
-    {
-        question: `配置Hadoop时，JAVA_HOME包含在哪一个配置文件中	<br>A.hadoop-default.xml	<br>B.hadoop-env.sh	<br>C.hadoop-site.xml	<br>D.configuration.xsl`, answer: "B"
-    },
-    {
-        question: `NameNode在启动时自动进入安全模式，在安全模式阶段，说法错误的是	<br>A.安全模式目的是在系统启动时检查各个DataNode上数据块的有效性	<br>B.根据策略对数据块进行必要的复制或删除	<br>C.当数据块最小百分比数满足的最小副本数条件时，会自动退出安全模式	<br>D.文件系统允许有修改`, answer: "D"
-    },
-    {
-        question: `如果想要修改集群的备份数量,可以修改下面哪个配置文件	<br>A.mapred-site.xml	<br>B.core-site.xml	<br>C.hdfs-site.xml	<br>D.hadoop-env.sh`, answer: "C"
-    },
-    {
-        question: `在Centos7中,如果想要查看本机的主机名可以使用下面哪个命令	<br>A.reboot	<br>B.hostname	<br>C.pwd	<br>D.tail`, answer: "B"
-    },
-    {
-        question: `下列哪项可以作为集群的管理工具	<br>A.Cludera Manager	<br>B.Pdsh	<br>C.Rsync+ssh+scp	<br>D.以上都可以`, answer: "D"
-    },
-    {
-        question: `Hadoop默认调度器策略为FIFO	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `集群内每个节点都应该配置RAID5，避免单磁盘损坏影响这个节点运行	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `HDFS有高容错性的特点,并且设计用来部署在廉价的硬件上	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `DROP hive外部表时,会删除HDFS上的数据	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `HBASE性能优化包含以下哪些选项	<br>A.读优化	<br>B.写优化	<br>C.配置优化	<br>D.JVM优化`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `Cloudera提供哪几种安装CDH的方法	<br>A.Cloudera manager	<br>B.tarball	<br>C.yum	<br>D.rpm`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪一项不属于Hadoop可以运行的模式	<br>A.本地模式	<br>B.伪分布式模式	<br>C.分布式模式	<br>D.互联模式`, answer: "D"
-    },
-    {
-        question: `Hadoop的作者是下面哪一位	<br>A.Doug Cutting	<br>B.Grace Hopper	<br>C.Kent Beck	<br>D.Martin Fowler`, answer: "A"
-    },
-    {
-        question: `下列关于MapReduce的说法不正确的是	<br>A.MapReduce是一种计算框架	<br>B.MapReduce来源于Google的学术论文	<br>C.MapReduce隐藏了并行计算的细节	<br>D.MapReduce程序只能用Java语言编写`, answer: "D"
-    },
-    {
-        question: `关于SecondaryNameNode，下面哪项是正确的	<br>A.它是Namenode 的热备	<br>B.它对内存没有要求	<br>C.它的目的是帮助NameNode合并编辑日志，减少NameNode启东时间	<br>D.它应与NameNode部署到同一个节点`, answer: "C"
-    },
-    {
-        question: `下面对HBASE的描述哪一项是错误的	<br>A.不是开源的	<br>B.是面向列的	<br>C.是分布式的	<br>D.是一种NoSQL数据库`, answer: "A"
-    },
-    {
-        question: `以下哪个文件系统与HDFS类似	<br>A.NTFS	<br>B.FAT32	<br>C.GFS	<br>D.EXT4`, answer: "C"
-    },
-    {
-        question: `关于Hadoop本地模式和伪分布式模式的说法，正确的是	<br>A.两者都起守护进程，且守护进程运行在一台机器上	<br>B.本地模式不适用HDFS，但加载守护进程	<br>C.两者都不与守护进程交互，避免复杂性	<br>D.后者比前者增加了HDFS输入输出以及可检查内存使用情况`, answer: "D"
-    },
-    {
-        question: `HDFS适合哪种读写任务	<br>A.一次写入，少次读取	<br>B.多次写入，少次读取	<br>C.一次写入，多次读取	<br>D.多次写入，多次读取`, answer: "C"
-    },
-    {
-        question: `HDFS文件默认保存几份	<br>A.1	<br>B.2	<br>C.3	<br>D.4`, answer: "C"
-    },
-    {
-        question: `下面哪个程序负责HDFS数据存储	<br>A.NameNode	<br>B.SecondaryNameNode	<br>C.ResourceManager	<br>D.DataNode`, answer: "D"
-    },
-    {
-        question: `下面哪个不属于Hadoop的调度策略	<br>A.后进先出调度	<br>B.先进先出调度	<br>C.计算能力调度	<br>D.公平调度`, answer: "A"
-    },
-    {
-        question: `HBASE依靠以下哪项存储底层数据	<br>A.HDFS	<br>B.Zookeeper	<br>C.ResourceManager	<br>D.MapReduce`, answer: "A"
-    },
-    {
-        question: `HDFS的NameNode负责管理文件系统的命名空间，将所有的文件和文件夹的元数据保存在一个文件系统树中，这些信息也会在硬盘上保存成以下文件：	<br>A.日志	<br>B.命名空间镜像	<br>C.两者都是	<br>D.两者都不是`, answer: "C"
-    },
-    {
-        question: `目前的Hadoop最高版本是哪个	<br>A.1.x	<br>B.2.x	<br>C.3.x	<br>D.4.x`, answer: "C"
-    },
-    {
-        question: `配置机架感知的下面哪项正确	<br>A.MapReduce会根据机架获取离自己比较近的网络数据	<br>B.写入数据的时候会写到不同机架的DataNode	<br>C.如果一个机架出问题，不会影响数据读写	<br>D.都正确`, answer: "D"
-    },
-    {
-        question: `Hadoop支持数据的随机读写	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `MapReduce适于PB级别以上的海量数据在线处理	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `MapReduce计算过程中，相同的key默认会被发送到同一个reduce task处理	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `HDFS的namenode保存了一个文件包括哪些数据库，分布在哪些数据节点上，这些信息也存储在硬盘上	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `Secondary NameNode是namenode出现问题时的备用节点	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `Hadoop自身具有严格的权限管理和安全措施保障集群正常运行	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `因为HDFS有多个副本，所以NameNode不存在单点问题	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `在大数据框架中,批处理系统一般不适用于对延时要示较高的场景	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `HDFS既适合超大数据集存储,也适合小数据集的存储	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `Hadoop的框架最核心的设计就是:HDFS和MapReduce	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `以下哪些是大数据的特点	<br>A.巨大的数据量	<br>B.多结构化数据	<br>C.增长速度快	<br>D.价值密度高`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `以下哪些是HBASE的特性	<br>A.高可靠性	<br>B.高性能	<br>C.面向列	<br>D.可伸缩`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `以下哪些属于结构化数据	<br>A.企业ERP数据	<br>B.财务系统数据	<br>C.视频监控数据	<br>D.行政审批表单数据`, answer: ["A", "B", "D"], type: "checkbox"
-    },
-    {
-        question: `关于HDFS集群中的DataNode的描述正确的是	<br>A.一个DataNode上存储的所有数据块可以有相同的	<br>B.存储客户端上传的数据的数据块	<br>C.DataNode之间可以互相通信	<br>D.响应客户端的所有读写数据请求,为客户端的存储和读取数据提供支撑`, answer: ["B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `下列关于HDFS的描述哪些是错误的	<br>A.NameNode磁盘元数据保存Block的位置信息	<br>B.DataNode通过长连接与NameNode保持通信	<br>C.HDFS集群支持数据的随机读写	<br>D.如果NameNode宕机,SecondaryNameNode会接替它使集群继续工作`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `MySQL数据库四种特性，不包括（）	<br>A.原子性	<br>B.事务性	<br>C.一致性	<br>D.隔离性`, answer: "B"
-    },
-    {
-        question: `大数据的起源是？（）	<br>A.金融	<br>B.互联网	<br>C.淘宝	<br>D.公共管理`, answer: "B"
-    },
-    {
-        question: `大数据时代，数据使用最关键的是？（）	<br>A.数据收集	<br>B.数据再利用	<br>C.数据存储	<br>D.数据分析`, answer: "B"
-    },
-    {
-        question: `大数据是由（）公司最先提出来的	<br>A.微软	<br>B.谷歌	<br>C.百度	<br>D.阿里`, answer: "B"
-    },
-    {
-        question: `大数据最明显的特点是？（）	<br>A.数据类型多	<br>B.数据量大	<br>C.数据处理速度快	<br>D.数据价值密度高`, answer: "B"
-    },
-    {
-        question: `数据精细化程度是指？（），越细化的数据，价值越高	<br>A.规模	<br>B.颗粒度	<br>C.活性	<br>D.关联性`, answer: "B"
-    },
-    {
-        question: `数据生命周期管理实践中，（）是执行方法	<br>A.数据存储和规范	<br>B.数据管理和维护	<br>C.数据价值发觉和利用	<br>D.数据应用开发和管理`, answer: "B"
-    },
-    {
-        question: `大数据的利用过程是（）。	<br>A.采集——统计——清洗——挖掘	<br>B. 采集——清洗——统计——挖掘	<br>C.采集——挖掘——清洗——统计	<br>D. 采集——清洗——挖掘——统计`, answer: "B"
-    },
-    {
-        question: `下列关于计算机存储容量单位的说法中，错误的是？（）	<br>A.1KB＜1MB＜1GB	<br>B.一个汉字需要一个字节的存储空间	<br>C.基本单位是字节（Byte）	<br>D.一个字节能够容纳一个英文字符`, answer: "B"
-    },
-    {
-        question: `下列哪项通常是集群的最主要瓶颈 ()	<br>A.CPU	<br>B. 磁盘 IO	<br>C.网络	<br>D.内存`, answer: "B"
-    },
-    {
-        question: `以下哪一项属于非结构化数据。（）	<br>A.企业ERP数据          	<br>B.视频监控数据	<br>C.财务系统数据          	<br>D.日志数据`, answer: "B"
-    },
-    {
-        question: `HDFS是基于流数据模式访问和处理超大文件的需求而开发的，具有高容错、高可靠性、高可扩展性、高吞吐率等特征，适合的读写任务是（）	<br>A.一次写入，少次读	<br>B. 一次写入，多次读	<br>C. 多次写入，多次读	<br>D.多次写入，少次读`, answer: "B"
-    },
-    {
-        question: `在Centos7中,如果想要查看本机的主机名可以使用下面哪个命令?（）	<br>A.ps -ef           	<br>B.hostname	<br>C.pwd	<br>D.tail`, answer: "B"
-    },
-    {
-        question: `关于大数据的价值密度描述正确的是以下哪个?（）	<br>A.大数据由于其数据量大,所以其价值也大。	<br>B.大数据由于其数据量大,所以其价值密度低。	<br>C.大数据的价值密度是指其数据类型多且复杂。	<br>D.大数据由于其数据量大,所以其价值密度高`, answer: "B"
-    },
-    {
-        question: `数据仓库的最终目的是？（）	<br>A.收集业务需求	<br>B.为用户和业务部门提供决策支持	<br>C.开发数据仓库的应用分析++	<br>D.建立数据仓库逻辑模型`, answer: "B"
-    },
-    {
-        question: `事物的四大特性(ACID)? （）	<br>A.原子性	<br>B.一致性	<br>C.隔离性	<br>D.持久性`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `ETL的全称是什么（）	<br>A.Extract	<br>B.Transform	<br>C.Load`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `下列属于ETL过程中基本过程的是什么？（）	<br>A.抽取（extract）、	<br>B.清洗（clean）、	<br>C.一致性处理（comform）	<br>D.交付（delivery）`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `关于脏数据说法正确的是? （）	<br>A.格式不规范	<br>B.数据不完整	<br>C.编码不统一	<br>D.意义不明确`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `大数据的“4V”特征包括：（）	<br>A.Volume(海量化)	<br>B.Variety(多样化)	<br>C.Velocity(快速化)	<br>D.Value(价值化)`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `对于大数据而言，最基本、最重要的要求就是减少错误、保证质量。因此，大数据收集的信息量要尽量精确。（）	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `一般而言，分布式数据库是指物理上分散在不同地点但在逻辑上是统一的数据库。因此分布式数据库具有物理上的独立性、逻辑上的一体性、性能上的可扩展性等特点。()	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据再利用的价值表现为：挖掘数据的潜在价值、实现数据重组的创新价值、利用数据可扩展性拓宽业务领域、优化存储设备，降低设备成本、提高社会效益，优化社会管理等。（）	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据仓库的最终目的是为用户和业务部门提供决策支持。（）	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `在数据生命周期管理实践中执行方法是指数据的管理和维护。（）	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据重组是数据的重新生产和重新采集（）	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `数据仓库的最终目的是收集业务需求,建立数据仓库逻辑模型（）	<br>A.对	<br>B.错`, answer: "B"
-    },
-    {
-        question: `当前，大数据产业发展的特点是、规模较大、增速很快、多产业交叉融合（）	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `数据再利用的意义在于挖掘数据的潜在价值、实现数据重组的创新价值、利用数据可扩展性拓宽业务领域（）	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `一般而言，分布式数据库是指物理上分散在不同地点，但在逻辑上是统一的数据库。因此分布式数据库具有物理上的独立性、逻辑上的一体性、性能上的可扩展性等特点。（）	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hadoop的三种安装模式不包括以下哪种? （）	<br>A.完全分布式模式                	<br>B.两分布式模式	<br>C.伪分布模式                  	<br>D.单机模式`, answer: "B"
-    },
-    {
-        question: `HBase 依靠（）存储底层数据	<br>A.MYSQL	<br>B.HDFS	<br>C.HIVE	<br>D.ORACLE`, answer: "B"
-    },
-    {
-        question: `下面哪个用户不是ORACLE缺省安装后就存在的用户( )	<br>A.SYSTE	<br>B.SYSDBA	<br>C.SCOTT	<br>D.SYS`, answer: "B"
-    },
-    {
-        question: `在Oracle中，用户（  ）拥有所有内置的程序包。	<br>A.SYSTEM	<br>B.SYS	<br>C.PUBLIC	<br>D.DEFAULT`, answer: "B"
-    },
-    {
-        question: `下面哪个程序负责 HDFS 数据存储。()	<br>A.NameNode	<br>B.Datanode	<br>C.Jobtracker	<br>D.Node`, answer: "B"
-    },
-    {
-        question: `关于HDFS集群中的DataNode的描述不正确的是（）	<br>A.存储客户端上传的数据的数据块	<br>B.一个DataNode上存储的所有数据块可以有相同的	<br>C.DataNode之间可以互相通信	<br>D.响应客户端的所有读写数据请求,为客户端的存储和读取数据提供支撑`, answer: "B"
-    },
-    {
-        question: `Spark几种部署方式包括()	<br>A.Local	<br>B.Standalone	<br>C.Yarn	<br>D.Mesos`, answer: ["A", "B", "C", "D"], type: "checkbox"
-    },
-    {
-        question: `下列属于大数据组件的是()	<br>A.HIVE	<br>B.SPARK	<br>C.FLINK	<br>D.MongoDB`, answer: ["A", "B", "C"], type: "checkbox"
-    },
-    {
-        question: `脏读(Drity Read)：某个事务已更新一份数据，另一个事务在此时读取了同一份数据，由于某些原因，前一个RollBack了操作，则后一个事务所读取的数据就会是不正确的。()	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `不可重复读(Non-repeatable read):在一个事务的两次查询之中数据不一致，这可能是两次查询过程中间插入了一个事务更新的原有的数据。()	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `幻读(Phantom Read):在一个事务的两次查询中数据笔数不一致，例如有一个事务查询了几列(Row)数据，而另一个事务却在此时插入了新的几列数据，先前的事务在接下来的查询中，就会发现有几列数据是它先前所没有的。()	<br>A.对	<br>B.错`, answer: "A"
-    },
-    {
-        question: `Hadoop和Spark都是大数据的分析技术。（）	<br>A.对	<br>B.错`, answer: "B"
-    },
+        question: `项目经理从制造商那里收到一个更新信息，说一个必要的设备修理可能会导致他们的可交付成果迟八周时间。项目经理应该怎么做？
+<br>A.确定关键路径
+<br>B.实施沟通管理计划
+<br>C.执行假设情景分析
+<br>D.对项目进度赶工`, answer: "C", tips: `假设情景分析就是对“如果情景X出现，情况会怎样？ ”这样的问题进行分析，即基于已有的进度计划，考虑各种各样的情景。知识点：章节 6.5.2.4 。`
+    }
+
+    , {
+        question: `项目经理在规划进度期间注意到，项目所需的技术分析人员数量有限，并且常常不可用。 为 了弥补这一点，项目经理在进度计划中延长了三周时间。项目经理使用的是什么工具或 技术 来调整进度计划？
+<br>A.资源优化
+<br>B.进度计划工具
+<br>C.提前量和滞后量
+<br>D.关键路径法`, answer: "A", tips: `题目中使用的是资源优化中的资源平衡。为了在资源需求与资源供 给之间取得平衡，根据资源制约对开始日期和结束日期进行调整的一种技术。克服特定时间 内资源数量有限或过度分配，资源平衡往往导致关键路径改变，通常是延长。知识点：章节 6.5.2.3。`
+    }
+
+    , {
+        question: `项目经理已经完成了收集干系人的需求工作，并且必须在即将召开的指导委员会会议提交项目进度计划。在制定项目进度计划之前，项目经理应该做什么？
+<br>A.创建工作分解结构 (WBS)
+<br>B.执行风险分析
+<br>C.估算项目成本
+<br>D.定义活动`, answer: "D", tips: `在制定进度计划之前、收集需求之后，必须完成的是定义活动。选项D是以选项A为基础的。知识点：章节 6.2。`
+    }
+
+    , {
+        question: `设计团队发现项目经理创建的工作分解结构 (WBS) 遗漏了关键任务。若要避免这个问题，项目经理应该事先做什么？
+<br>A.获得主题专家 (SMEs) 的专家判断
+<br>B.审查过往项目的历史信息
+<br>C.创建需求跟踪矩阵
+<br>D.制定一份石川图`, answer: "C", tips: `需求跟踪矩阵是把产品需求从其来源连接到能满足需求的可交付成果的一种表格。使用需求跟踪矩阵，应该包括项目范围和WBS可交付成果。知识点：5.2.3.2`
+    }
+
+    , {
+        question: `在项目执行期间，团队识别到几个变更请求，其中包括项目成功所需的功能，这些功能未能包含在需求跟踪矩阵中。若要避免这种情况，项目经理事先应该做什么？
+<br>A.创建工作分解结构(WBS)
+<br>B.定义范围
+<br>C.核实范围
+<br>D.控制范围`, answer: "B", tips: `定义范围的输出包括对跟踪需求矩阵的更新。章节 5.3`
+    }
+
+    , {
+        question: `团队根据原型评审会上的客户反馈意见实施了一项变更，一位关键相关方现在担心项目可 交 付成果不符合验收标准。项目经理应该如何防止再次发生这种情况？
+<br>A.检查工作分解结构 (WBS) 以确定哪些相关方的可交付成果受到影响
+<br>B.评审相关方参与过程并利用相关信息更新相关方参与计划
+<br>C.与发起人讨论制定相关方参与计划的相关事宜
+<br>D.使用一个来自以前类似项目的相关方参与过程`, answer: "A", tips: `相关方担心可交付成果不符合验收标准，项目经理应检查 WBS，找 出 哪些可交付成果受到变更的影响，以便进行分析并应对。知识点：章节 5.4。`
+    }
+
+    , {
+        question: `项目经理正在执行一个涉及不同业务部门的全公司项目。在一次规划会议上，项目经理注意到每个部门的具体需求不能引起其他部门的兴趣，这影响到会议的质量。若要解决这个问题，项目经理应该怎么做？
+<br>A.石川图和需求跟踪矩阵
+<br>B.焦点小组会议和思维导图
+<br>C. 引导和亲和图
+<br>D.头脑风暴和需求跟踪矩阵`, answer: "C", tips: `引导有助于建立现任、改善关系、改善沟通。章节 5.2.2.6`
+    }
+
+    , {
+        question: `在审查进度计划时，项目经理发现由于一个意外问题导致存在严重的范围蔓延。项目经理应该怎么做？
+<br>A.停止与该问题相关的工作，并通知项目发起人。
+<br>B.更新风险登记册并通知发起人。
+<br>C. 向变更控制委员会(CCB)提交变更请求，并更新项目基准。
+<br>D.使用因果图执行根本原因分析，并更新风险管理计划。`, answer: "C", tips: `范围蔓延，纠正回来还是要变更。`
+    }
+
+    , {
+        question: `一家公司计划扩大其公司网站的服务范围。项目经理开始根据批准的项目章程收集详细的需求。项目经理应该怎么做才能就项目的可交付成果达成一致意见？
+<br>A.与相关方和主题专家(SMEs)一起召开焦点小组会议
+<br>B.与关键相关方一起使用引导技术
+<br>C.与相关方一起进行头脑风暴
+<br>D.访谈关键相关方和发起人，以获取有关需求的更多信息`, answer: "B", tips: `收集需求时采用引导 (研讨会) 的目的，是协调相关方的需求差异， 最终达成一致意见。知识点：章节 5.2.2.6`
+    }
+
+    , {
+        question: `一个项目的预计工期为六个月，项目经理在第五个月加入该项目。经调查发现，一些需要的活动尚未开始，而一些不必要的活动却已经完成。为避免这个问题，应事先制定哪一份计划？
+<br>A.质量管理计划
+<br>B.风险管理计划
+<br>C.范围管理计划
+<br>D.沟通管理计划`, answer: "C", tips: `需要做的没有做，不需要做的却已经完成，这是范围没有管理到位， 事先应该制定范围管理计划。知识点：章节 5.1.3.1。`
+    }
+
+    , {
+        question: `完成一个项目的第一个可交付成果后，一位相关方告知该可交付成果不满足业务需求。项目经理下一步应该怎么做？
+<br>A.审查工作分解结构(WBS)字典
+<br>B.提交一份变更请求，以增加时间修正可交付成果
+<br>C.执行核实范围过程
+<br>D.更新项目管理计划`, answer: "C", tips: `可交付成果完成后应该去控制质量进行内部核实，再去确认范围进 行外部验收。题干说一位相关方不满意，应该完整地进行 5.5 。知识点：章节 5.5`
+    }
+
+    , {
+        question: `在项目执行过程中，项目经理得知一项法规变化将需要实施额外的技术控制。项目经理与团队一起执行了影响评估。项目经理下一步应该怎么做？
+<br>A.请发起人提供额外资金以解决新的需求
+<br>B.更新范围管理计划
+<br>C.将其添加进风险登记册
+<br>D.提交一项变更请求，以增加范围`, answer: "D", tips: `法规要求增加额外的技术控制，即增加范围，进行变更请求。`
+    }
+
+    , {
+        question: `一家公司启动一个项目，旨在下一季度结束前提高客户满意度。项目经理应该如何确定最佳实践？
+<br>A.使用标杆对照
+<br>B.组织焦点小组会议
+<br>C.安排一次引导式研讨会
+<br>D.创建一份亲和图`, answer: "A", tips: `标杆对照是将实际或计划的项目实践或项目的质量标准与可比项目 的实践进行比较，以便识别最佳实践，形成改进意见，并为绩效考核提供依据。知识点：章 节 5.2.2.2。`
+    }
+
+    , {
+        question: `一个设计团队被分配开发一项新技术，让公司能够符合新的政府规定。应该用什么来收集产品设计属性？
+<br>A.控制图
+<br>B.需求跟踪矩阵
+<br>C.工作分解结构 (WBS)
+<br>D.头脑风暴`, answer: "D", tips: `头脑风暴是收集需求的工具和技术。知识点：章节 5.2.2.2。`
+    }
+
+    , {
+        question: `尽管未获得事先同意，一位项目团队成员假设客户将会批准，开发了一个功能。项目经理应该怎么做？
+<br>A.坚持不包含这个功能
+<br>B. 由于工作已经完成，继续进行项目
+<br>C.查阅范围管理计划来决定下一步行动
+<br>D.通知相关方，并签发变更请求`, answer: "C", tips: `范围管理计划是项目管理计划的组成部分，描述将如何定义、制定、 监督、控制和确认项目范围，确定如何审批和维护范围基准；选项 D  中的顺序描述错误,并 且 C  在 D  之前执行。知识点：章节 5.1.3.1。`
+    }
+
+    , {
+        question: `项目经理完成了一个重要的IT部署项目。项目经理与发布经理确认，所有系统都在正常运行，并且质量保证团队已经验证了这些功能。通知客户之后，项目经理下一步应该怎么做？ 
+<br>A.将经验教训更新到组织知识库中
+<br>B.更新风险登记册、项目相关方和项目团队成员
+<br>C.关闭采购计划
+<br>D.确认并完成发布文档`, answer: "D", tips: `符合验收标准的可交付成果应该由客户或发起人正式签字批准。应 该从客户或发起人那里获得正式文件，证明相关方对项目可交付成果的正式验收。知识点： 章节 5.5.3. 1。`
+    }
+
+    , {
+        question: `一位新的项目经理加入一个正在进行的项目。在知识转移会议上，项目经理意识到业务需求不明确，与前项目经理的理解不同。在继续项目活动之前，项目经理应该做什么来确定起点？
+<br>A. 审查需求管理计划，相关方登记册和功能需求
+<br>B. 阅读项目管理计划、项目章程和商业文件
+<br>C.查阅工作分解结构 (WBS)、范围、进度计划和质量规划文件
+<br>D.审查需求跟踪矩阵、相关方管理计划和验收标准`, answer: "B", tips: `参考收集需求过程的输入。知识点：章节 5.2.1.1 、5.2.1.2 、5.2.1.4。`
+    }
+
+    , {
+        question: `项目团队经常遗漏可交付成果。若要解决这个问题，项目经理首先应该怎么做？ <br>A.收集由团队执行的活动和任务的相关信息。
+<br>B.将工作委托给高级团队成员，让其担任主管。
+<br>C.将所有队员成员的工作分成相等的部分。
+<br>D.提供培训，以便团队成员可以处理额外的工作`, answer: "A", tips: `按照 100%原则创建 WBS ，来确保既没有遗漏的工作，也没有多余 的工作。WBS   中的每个工作包都需分解成活动，以便通过这些活动来完成相应的可交付成 果。选项 B 、C  和 D  明显不正确。知识点：章节 5.4.2.2。`
+    }
+
+    , {
+        question: `一个构建月度报告的项目涉及两个团队。团队X从事后端数据库的工作，团队Y从事构建报告的用户界面前端工作。项目经理要求两个团队的代表在需求收集过程中担任主题专家(SMEs) ，其中一位主题专家是该领域广受尊敬的人物，项目经理担心可能出现偏差。项目经理应使用什么工具或技术？
+<br>A.德尔菲技术
+<br>B. 多标准决策分析
+<br>C.石川图
+<br>D.头脑风暴`, answer: "A", tips: `德尔菲技术能够避免对他人造成不适当的影响。知识点：章节 5.2.2.4。`
+    }
+
+    , {
+        question: `项目经理发现项目可交付成果与发起人期望之间存在若干不一致之处，为确保一致，项目经理应该制定下列哪一项？
+<br>A.风险登记册
+<br>B.相关方参与计划
+<br>C.沟通管理计划
+<br>D.工作分解结构 (WBS)`, answer: "D", tips: `确保可交付成果和发起人的期望一致，首先要收集发起人的需求、 再定义范围，按照范围基准交付。知识点：章节 5.4。`
+    }
+
+    , {
+        question: `一件工作产品即将到发布期限，项目经理和团队得知该工作产品的功能不能满足要求。客 户已经承诺在计划日期提供功能齐全的产品。在记录这个问题后，项目经理应该怎么做？ 
+<br>A.在用户验收测试期间解决该问题
+<br>B.获得额外的资源专业知识
+<br>C.通知客户和发起人
+<br>D.与客户协商获得额外的时间`, answer: "A", tips: `，用户验收测试来确认功能是否齐全。发布日期临近，且需按计划提 供功能齐全的产品，因此PM需记录该问题，并积极尽心解决。选项B没有在题目中指明。`
+    }
+
+    , {
+        question: `项目收尾时，项目经理审查上一个阶段收尾信息，以验证所有项目工作是否完成。项目经理应该做什么？
+<br>A.集合团队，认可她们对项目付出的努力
+<br>B.通知项目发起人项目已收尾
+<br>C.在组织过程资产中更新经验教训
+<br>D.执行偏差分析`, answer: "D", tips: `考结束项目或阶段的工具，偏差分析。知识点：章节 4.7.2.2。`
+    }
+
+    , {
+        question: `在项目执行期间，一个团队成员识别出以前未被识别为项目相关方的职能经理提交了新需求。项目经理应该怎么做？
+<br>A.与项目发起人开会，获得反馈
+<br>B.启动实施整体变更控制过程
+<br>C.对需求执行成本效益分析
+<br>D.将该职能经理添加进沟通管理计划`, answer: "B", tips: `未被识别为干系人的职能经理提交了新需求，应该更新干系人登记册、 实施整体变更控制。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `批准项目章程之后，人力资源总监要求增加项目范围。一名项目团队成员在没有通知项目经理的情况下增加了这些范围。项目经理应该怎么做？
+<br>A.与团队成员讨论该问题
+<br>B.执行实施整体变更控制过程
+<br>C.寻求项目发起人的指导
+<br>D.与项目管理办公室 (PMO) 一起审查范围变更`, answer: "B", tips: `题目出现了范围蔓延问题，应强调实施变更控制流程，让项目回到正常轨道。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `在项目启动阶段，项目经理审查了经验教训知识库。项目经理得知，之前有一个项目由于 不断的范围蔓延而失败，这个项目无法负担额外的时间或预算。为避免项目失败，项目经理 应该怎么做？
+<br>A.拒绝所有超出范围的变更请求
+<br>B.管理关键相关方的期望
+<br>C.将该信息升级上报给发起人
+<br>D.包含严格和正式的过程批准变更`, answer: "D", tips: `如何避免范围蔓延，应该严格遵循变更管理流程。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `一家公司正在建立一个系统来提高客户服务团队的服务质量，项目经理确定过往项目的经验教训不适合这个项目。项目经理如何收集足够的信息来准备经济可行性研究？
+<br>A.与法律部门会面， 以识别即将出台的政府和监管行业要求。
+<br>B.分析市场、组织和社会需求、生态要求和客户请求。
+<br>C.进行调查，以确定最新的客户需求，与主要竞争对手之间的服务差距，以及市场的服务趋 势。
+<br>D.与技术部门会面，了解技术的最新发展， 以及新系统提供的成本节省机会。`, answer: "B", tips: `可行性研究是商业论证的内容，商业论证的编制由一个或多个因素引 发。知识点：章节 4.1.1. 1。`
+    }
+
+    , {
+        question: `新项目似乎具有高层级风险因素和环境制约因素。尽管其他项目经理提出了警告，一位项 目经理仍然决定管理该项目。项目经理应该将项目的高风险性质记录在哪里？
+<br>A.项目章程
+<br>B.相关方参与计划
+<br>C.问题日志
+<br>D.项目管理计划`, answer: "A", tips: `项目的高层级风险应该记录在项目章程当中。知识点：章节 4.1.3.1。`
+    }
+
+    , {
+        question: `一名关键项目发起人要求项目经理实施一项新功能，而该功能可能影响项目的最后期限， 项目团队必须评估这项请求的影响。项目经理应如何成功利用实施随整体变更控制过程？
+<br>A.使用项目管理计划作为输入
+<br>B.检查项目章程
+<br>C.考虑批准的变更请求
+<br>D.审查进度计划和成本基准`, answer: "A", tips: `PM  应该参考项目管理计划中的变更管理计划实施整体变更控制过程。 知识点：章节 4.6。`
+    }
+
+    , {
+        question: `在开始进行一个已获批准工作包的工作之后，一名团队成员了解到项目管理计划未更新。 该团队成员应该怎么做？
+<br>A.签发变更请求，以更新项目管理计划
+<br>B.推迟工作，直到项目经理更新项目管理计划
+<br>C.继续工作，并要求项目经理更新项目管理计划
+<br>D.请求发起人许可在等待项目管理计划更新的同时继续工作`, answer: "A", tips: `本题目是一个异常的情景，比较四个选项，A  为最合适的做法，积 极通过变更流程进行补救。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `一个关键项目已获批准，一位关键相关方根据以往的经验，担心与该项目相关的风险。项 目经理下一步应该怎么做？
+<br>A.更新项目管理计划和风险登记册
+<br>B.分析项目范围
+<br>C.请求项目发起人就风险提出具体意见
+<br>D.审查项目章程中记录的高层级风险、假设条件和制约因素`, answer: "D", tips: `刚获得批准的项目要识别风险应该审查章程中的高层及风险与假设条件。知识点：章节 4.1.3。`
+    }
+
+    , {
+        question: `在执行一个潜艇现代化项目期间，客户要求安装新的潜望镜。项目经理必须怎么做？ <br>A.检查可行性，准备预算，并获得变更请求批准
+<br>B.执行实施整体变更控制过程，获得预算批准，并执行变更请求
+<br>C.准备变更请求，获得变更控制委员会 (CCB) 的批准，并实施变更
+<br>D.检查可行性，准备报价和预算，并获得客户的批准`, answer: "B", tips: `本题目考察变更流程。选项 A  和 D  不符合流程。选项 C  没有 B  完 整。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `一家组织希望开展一个网络开发项目。在与相关方讨论之后，销售团队决定在不同渠道投资，将会产生更多收入。这是使用什么工具或技术来做出这个决定？
+<br>A.专家判断
+<br>B.成本效益分析
+<br>C.访谈
+<br>D.头脑风暴`, answer: "B", tips: `商业论证或类似文件从商业视角描述必要信息，并据此决定项目的预 期结果是否值得所需投资。高于项目级别的经理和高管们通常使用该文件作为决策的依据， 商业论证包含商业需要分析与成本效益分析。知识点：章节 4.1.1. 1。`
+    }
+
+    , {
+        question: `已根据批准的范围启动一个项目。在实施项目设计过程中，一位团队成员表示该产品在特定情景下不能满足需求。解决这个问题将增加范围和成本，且项目将错过最后期限。项目发起人不提供额外的资金来支持这个项目。项目经理应该怎么做？
+<br>A.进行风险分析并向项目发起人更新进展
+<br>B.执行实施整体变更控制过程
+<br>C.纠正问题，以让客户满意
+<br>D.通知客户并协商接受风险`, answer: "B", tips: `遵循变更流程解决该问题。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `在项目收尾过程中，项目经理得知他们必须快速加入一个更高优先级的项目。如果立即启动项目，这个新项目将为公司带来200万美元的增量价值。项目经理应该怎么做？
+<br>A.关闭所有风险并转到新项目
+<br>B.将剩余任务委托给替代资源
+<br>C.确保所有相关项目文件均已存档
+<br>D.执行项目标杆对照一家公司计划交付一种新产品，但目前无法获得需要的技能。`, answer: "C", tips: `PM  应该有力促进前一个项目的收尾工作。知识点：章节 4.7 。A ： 关闭所有风险不代表项目完成收尾，排除。B，未确定存在替代资源代替 PM  接管收尾工作， 干扰项。D  是在接收新项目之后可能采取的措施，不是本项目应该做的事情`
+    }
+
+    , {
+        question: `若要启动这个项目，项目经理应该把重点放在哪里？
+<br>A.详细的项目需求
+<br>B.质量控制
+<br>C.高层级风险的评估
+<br>D.竞争对手分析`, answer: "C", tips: `在项目启动阶段需要将缺乏技能列为高层级风险。知识点：章节 4.1.3.1。`
+    }
+
+    , {
+        question: `在规划项目开工大会时，项目经理应该如何处理干系人的期望?
+<br>A.澄清业务需求
+<br>B.确定项目沟通渠道
+<br>C.审查类似项目的经验教训
+<br>D.列出产生主要可交付成果的活动`, answer: "B", tips: `项目开工会议通常意味着规划阶段结束和执行阶段开始，旨在传达项 目 目标、获得团队对项目的承诺，以及阐明每个相关方的角色和职责。澄清业务需求，列出 产出可交付成果的活动与启动大会的目标关联度不大。知识点：章节 4.2.2.4`
+    }
+
+    , {
+        question: `在与客户进行设计讨论期间，一个所需的功能被认定为过时。客户的项目经理同意可以将 其从项目范围中删除。项目经理下一步应该怎么做？
+<br>A.从项目范围中删除这一项
+<br>B.遵循正式的变更管理过程
+<br>C.与项目发起人一起审查变更
+<br>D.修改关键路径`, answer: "B", tips: `遵循变更流程进行范围方面的变更。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `项目团队成员习惯于在制定好的变更控制过程之外进行变更。在一次团队会议上，向公司董事会发出另一个变更请求。项目经理应该怎么做？
+<br>A.接受该变更请求，并继续管理项目以满足其要求和进度计划
+<br>B.通知请求者应该通过变更控制过程来处理变更
+<br>C.召开一次团队建设会议，希望团队在所有变更之后重新走回正轨
+<br>D. 向项目发起人询问有关变更和项目绩效的详细信息`, answer: "B", tips: `要遵循变更流程处理变更请求。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `在一次状态会议上，客户的一名员工要求项目经理提供新的产品功能。项目经理不确定谁 有权批准请求。项目经理首先应该查阅哪份文件？
+<br>A.变更日志
+<br>B.变更管理计划
+<br>C.执行，负责，咨询和知情 (RACI) 矩阵
+<br>D.组织过程资产`, answer: "B", tips: `变更控制系统包含在变更管理计划中。该系统不仅说明什么样的变更需要哪个层次的批准，而且也说明在什么情况下可以不经批准就实施变更。该系统说明CCB的组成、权力与责任。知识点：章节 4.6.1. 1。`
+    }
+
+    , {
+        question: `客户申请破产，项目在完工前结束。项目经理应首先在最终项目报告中包含什么文件？ 
+<br>A.经验教训
+<br>B.将未完成的可交付成果文件转移给运营小组
+<br>C.项目绩效报告
+<br>D.项目终止原因`, answer: "D", tips: `如果项目在完工前就提前终止，结束项目或阶段过程还需要制定程 序，来调查和记录提前终止的原因。知识点：章节 4.7.3.4。`
+    }
+
+    , {
+        question: `一个计算机更换项目延迟了两周时间，因为团队发现一些组件存在质量问题。项目经理下一步应该怎么做？
+<br>A.提交变更请求
+<br>B.重定项目进度计划
+<br>C.更新项目管理计划
+<br>D.取消项目`, answer: "A", tips: `发现质量问题，应该进行缺陷补救，走变更流程。知识点：章节 4.3.3.4。`
+    }
+
+    , {
+        question: `公司请一名新项目经理来管理一个小型高端项目。如果这个项目成功，将会为公司带来额外的工作。有效的收尾过程将是项目成功的关键因素。为确保成功，项目经理必须产生什么 可交付成果？
+<br>A.验收文件
+<br>B.储备分析
+<br>C.进度报告
+<br>D.采购审计`, answer: "A", tips: `正常收尾的准入且必要条件是获得正式验收。在项目收尾期间，项目经理应该回顾以往的阶段文件，确认范围过程输出的验收的可交付成果。知识点：章节 4.7.1.2。`
+    }
+
+    , {
+        question: `一名团队成员不清楚项目经理的主要职责和职权级别，哪一份文件可以帮助团队成员了解这一点？
+<br>A.项目章程
+<br>B.项目管理计划
+<br>C.组织结构
+<br>D.项目资源管理划`, answer: "A", tips: `项目章程是由项目启动者或发起人发布的，正式批准项目成立，并 授权项目经理动用组织资源开展项目活动的文件。知识点：4.1.3.1。`
+    }
+
+    , {
+        question: `项目经理在两个期限紧迫的项目之间轮替。尽管时间有限，但他决定从这两个项目中收集经验教训。项目经理应如何收集经验教训？
+<br>A.在每个项目完成时记录经验教训。
+<br>B.请求知识管理部门的帮助。
+<br>C.存档项目会议的所有会议记录。
+<br>D.从启动阶段开始，定期记录经验教训。`, answer: "D", tips: `经验教训总结工作应该及时、尽早，并在整个项目期间不断更新。 知识点：章节 4.4.3. 1。`
+    }
+
+    , {
+        question: `一名团队成员急于将客户正在考虑的新功能添加到项目可交付成果中。在开始为这些新功能工作之前，需要谁的批准？
+<br>A.项目经理
+<br>B.变更控制委员会 (CCB)
+<br>C.项目发起人
+<br>D.主题专家 (SME)`, answer: "B", tips: `对于引起基准的变更需要获得 CCB  的审批后才可执行。知识点：章 节 4.6.2.5。`
+    }
+
+    , {
+        question: `一个项目要求在六个月内交付项目，项目经理担心时间表不合理。为解决这种情况，项目经理应该怎么做？
+<br>A.按照项目要求制定项目管理划
+<br>B.请求额外的资源
+<br>C.与主题专家 (SMEs) 和发起人会面， 以设定可实现的期望
+<br>D.通知项目发起人不能满足时间表`, answer: "C", tips: `时间表不合理，积极与专家、发起人确定可实现的期望。知识点： 章节 3.4.4. 1。`
+    }
+
+    , {
+        question: `招募项目经理时，项目发起人列出面试人选的候选名单。项目发起人应将哪项技能列为最 高选择标准？
+<br>A.进度安排
+<br>B.沟通
+<br>C.规划
+<br>D. 问题解决`, answer: "B", tips: `在由上级和团队成员指定的项目经理中，排名前 2%的项目经理之 所以脱颖而出，是因为他们展现出了超凡的人际关系和沟通技能以及积极的态度。知识点： 章节 3.3.2`
+    }
+
+    , {
+        question: `职能部门经理做出的一项决策对项目产生负面影响，项目经理首先应该做什么？
+<br>A.与职能经理交谈，让他们了解他们决策的影响。
+<br>B.让公司高管参与确定职能经理决策的影响。
+<br>C.向职能经理提供其决策产生的问题清单。
+<br>D.咨询其他经理，看看他们是否也曾与该职能经理发生同样的问题。`, answer: "A", tips: `按照题干的描述，职能经理做出的决策对项目产生了负面影响，作为项目经理，需要用正确的方式进行干预。无论是要纠正还是要预防，更合理的方式是要先 找到该职能经理沟通，要让其了解该决策带来的影响。B  选项往往是在迫不得已，职能经理 不合作的情况下，才要采取的方法。知识点：P60 ，章节 3.4.4 ，领导力技能。`
+    }
+
+    , {
+        question: `一位新项目经理加入了由高级项目经理监督的项目，发起人要求新项目经理制定质量管理计划，项目经理应该怎么做？
+<br>A. 向高级项目经理咨询已制定的质量过程和计划，并在选择适当的标准时寻求指导 <br>B.与客户开会收集需求
+<br>C.要求发起人提供成本效益分析和标杆对照样本
+<br>D.提交变更请求推迟了质量管理计划的发展计划直到质量矩阵和质量检查表被创造`, answer: "A", tips: `题干里的高级项目经理可以理解为类似 PMO  的角色，当项目经理 对项目进行规划并制定相应的项目管理计划的子计划的时候，需要咨询该高级项目经理已制 定的质量过程和计划。必要的时候，也需要该高级项目经理提供指导。知识点：P48 ，章节 2.4.4.3 ，项目管理办公室。`
+    }
+
+    , {
+        question: `项目经理正在管理一个项目，该项目与最近完成的一个项目类似。高级管理人员要求快速启动项目。若要加快启动过程，项目经理应该做什么？
+<br>A.重复利用之前项目的周期报告。
+<br>B.查看其它项目经理的问题日志。
+<br>C.使用先前已存档项目的估算信息。
+<br>D. 降低项目的复杂性，因为它具有相同的风险。`, answer: "C", tips: `当前项目与之前完成的某项目类似，能使用的只有储存在组织过程资 产当中的现有估算信息或者用于估算的参数等。每个项目都会有其独特的问题以及风险，可 以参考但是一定无法照搬。知识点：P39 ，章节 2.3 ，组织过程资产。`
+    }
+
+    , {
+        question: `项目经理正在识别一个项目章程的风险，该公司最近宣布，所有IT项目必须使用第三方 云基础构架实施。项目经理可以使用什么作为公司第一个基于云的IT项目的风险相关输入来源？
+<br>A.事业环境因素
+<br>B.组织过程资产
+<br>C.外部顾问
+<br>D.组织知识库`, answer: "A", tips: `题目中的关键词是“必须使用第三方的云基础架构”，“风险输入”， 说明考点是识别风险的输入。“基础架构”属于组织内部的事业环境因素。知识点：P413， 章节 11.2.1.5 ，事业环境因素。P38 ，章节 2.2.1 ，组织内部的事业环境因素。`
+    }
+
+    , {
+        question: `项目经理正在规划一项举措，必须交付给之前没有交付经验的世界上某些地方。若要识别全球范围的项目制约因素，项目经理能够做什么？
+<br>A.审查经验教训
+<br>B.与项目发起人一起召开实况调查会议
+<br>C.与全球项目相关方头脑风暴
+<br>D.研究事业环境因素`, answer: "D", tips: `识别全球范围的项目制约因素，即事业环境因素。本题考点为事业 环境因素的内容。P39`
+    }
+
+    , {
+        question: `项目团队成员来自于多个部门，并将处理项目和运营活动，任务和资源均已确定。若要确保资源，项目经理应做什么？
+<br>A.要求职能经理为项目提供可用资源。
+<br>B.与职能经理协商项目的资源和角色。
+<br>C.联系资源，沟通任务，并与职能经理确认。
+<br>D.将资源需求发送给发起人以与职能经理协商。`, answer: "B", tips: `职能型组织中，职能经理拥有资源管理权限，项目经理需要和职能经 理协商、谈判以确保获取资源。知识点：P47 ，章节 2.4.4 ，组织结构对项目的影响。`
+    }
+
+    , {
+        question: `项目经理正在一个职能型组织中管理一个项目，一位关键相关方请求进行一项高影响变更，这将使可交付成果的成本增加50% ，变更控制委员会(CCB)尚未成立。但是，项目经理仍然启动变更控制过程。由谁负责批准该变更？
+<br>A.项目团队和关键相关方
+<br>B.项目发起人和职能经理 
+<br>C.项目经理和职能经理
+<br>D.项目经理和项目团队`, answer: "B", tips: `职能型组织中，职能经理为项目预算的管理者，同时成本增加 50%， 幅度较大，需要发起人的批准。知识点：P47 ，章节 2.4 ，组织结构对项目的影响。`
+    }
+
+    , {
+        question: `首席信息官告知项目经理项目使用一个公共文件共享网站的行为违反了公司的安全要求。项目经理应在下列哪一份文件中找到这项需求？
+<br>A.项目安全计划
+<br>B.事业环境因素
+<br>C.组织过程资产
+<br>D.项目管理信息系统`, answer: "C", tips: `安全政策、安保政策属于组织过程资产。知识点：章节 2.3P39  页” 组织过程资产”。`
+    }
+
+    , {
+        question: `当一个团队克服一系列技术难题时，项目经理应该怎么做来确保其他团队从他们的经验中收益？
+<br>A.与其他团队一起召开知识转移会议，分享他们的经验
+<br>B.向所有公司员工发送经验摘要
+<br>C.与其他团队的技术成员分享经验
+<br>D.将经验记录在企业知识库中`, answer: "D", tips: `知识点：章节 2.3.2  组织知识库。P41  页，组织知识库`
+    }
+
+    , {
+        question: `项目经理加入公司，经验有限。当被任命管理一个项目时，该项目经理首先应该怎么做？ 
+<br>A.请求公司指导
+<br>B.寻求专家判断
+<br>C.审查组织过程资产
+<br>D.识别项目相关方`, answer: "C", tips: `，项目经理经验不足，应先审查组织过程资产，组织过程资产包括来自 任何 (或所有) 项目执行组织的，可用于执行或治理项目的任何工件、实践或知识，还包括 来自组织以往项目的经验教训和历史信息。知识点：章节 2.3 ，P39  页，“组织过程资产”。`
+    }
+
+    , {
+        question: `项目章程最近已获得批准。然而，项目经理忽视了可能延迟进度计划的关键监管要求。若要避免这种疏忽，项目经理应检查什么？
+<br>A.项目管理计划
+<br>B.组织过程资产
+<br>C.事业环境因素
+<br>D.协议`, answer: "C", tips: `事业环境因素包含了政府或行业标准。例如包括与产品、生产、环境、 质量和工艺有关的监管机构条例和标准。知识点：章节 2.2.2`
+    }
+
+    , {
+        question: `项目经理希望在项目启动阶段执行风险分析。为确保项目成功，项目经理应首先审查下列哪一项组织过程资产？
+<br>A.更新的项目风险登记册
+<br>B.风险管理计划和相关方承受力
+<br>C.历史信息和经验教训
+<br>D.组织基础设施和市场条件`, answer: "C", tips: `历史信息与经验教训知识库 (如项目记录与文件、完整的项目收尾信息与文件、关于以往项目选择决策的结果及以往项目绩效的信息，以及从风险管理活动中获取的信息) 。知识点：章节 2.3.2 。P41页`
+    }
+
+    , {
+        question: `经过长期合同谈判，终于签订合同。项目经理下一步应该怎么做？
+<br>A.审查合同的服务水平协议 (SLA)
+<br>B.审查合同的资源矩阵
+<br>C.与关键项目相关方一起召开项目启动大会
+<br>D.更新经验教训`, answer: "D", tips: `经验教训登记册可以记录遇到的挑战、问题、意识到的风险和机会， 或其他适用的内容。知识点：P41  页“历史信息与经验教训知识库 (如项目记录与文件、完 整的项目收尾信息与文件、关于以往项目选择决策的结果及以往项目绩效的信息，以及从风 险管理活动中获取的信息)”`
+    }
+
+    , {
+        question: `产品设计被认定为是各种制造问题的根本原因。若要在将来避免面对同样的问题，项目经理应该怎么做？
+<br>A.执行实施质量管理过程
+<br>B.审查质量管理计划
+<br>C.执行实施整体变更控制过程
+<br>D.更新经验教训知识库`, answer: "D", tips: `避免将来遇到同样的问题，需要更新经验教训。知识点：章节 2.3.2。`
+    }
+
+    , {
+        question: `在一个为期五年的项目执行一年后，项目经理得知，团队人员流动率高的原因在于团队没有收到与正在从事同一个项目的其他团队相同的财务津贴。项目经理预测，因为如此高的人员流动率，该项目将遭受两年半的延期。支付额外补偿的金额未包含在合同中，项目发起人不愿意重新谈判。项目经理应该怎么做？
+<br>A.向项目发起人提出一个减少范围的变更请求。
+<br>B.使用预算储备支付补偿。
+<br>C.将该问题升级上报给组织的项目集成或项目组合管理办公室(PMO)。
+<br>D.请求延长工期。`, answer: "C", tips: `项目经理遇到解决不了的问题，向上级及 PMO  寻求帮助。`
+    }
+
+    , {
+        question: `为获得新项目所需的资源，项目必须得到所有职能经理的许可。这家公司属于什么组织结构？
+<br>A.平衡矩阵型组织
+<br>B.弱矩阵型组织
+<br>C.强矩阵型组织
+<br>D.职能型组织`, answer: "D", tips: `职能型组织中项目经理在资源的可用性上是无权或者极少有支配权。 知识点：表 2- 1  组织结构对项目的影响。`
+    }
+
+    , {
+        question: `在矩阵型组织中，刚刚传达了评价级别。其中一位团队成员获得了意想不到的低绩效评价，这位团队成员现在失去动力，影响到项目工作。若要避免这个问题，项目经理应该事先做什么？
+<br>A.与职能经理协商评价等级
+<br>B.与职能经理协作对团队进行评价
+<br>C.为职能经理执行整体性评价
+<br>D.允许职能经理全权负责团队评价`, answer: "B", tips: `在矩阵型组织中，pm  应该和职能经理合作进行绩效评价。知识点： 章节 2.4.4。`
+    }
+
+    , {
+        question: `一位团队成员通知项目经理，一种计算机病毒正在关闭整个公司的工作站。项目经理应该怎么做？
+<br>A.宣布发生严重的安全问题，并将其升级上报给危机管理委员会
+<br>B.尝试确定病毒的类型及其来源
+<br>C.通知IT安全部
+<br>D.关闭所有系统并等待有关下一步操作的信息`, answer: "C", tips: `发现计算机病毒，应告知公司的 IT  安全部门进行处理。这是公司 IT 部门关于病毒防范的常规操作 (安装杀毒软件、定期更新、及时报告等)。知识点：章节 2.2。 A  不是 PM  这个等级可以做的事情。B ，不属于 PM  的责任范畴。D ，不是 PM  具有的操 作权限，PM  只有自身负责项目或系统权限。`
+    }
+
+    , {
+        question: `项目经理正在执行一个新的项目，以解决之前完成的一个项目中的差距。项目经理首先应该做什么？
+<br>A.计划使用相同的项目资源
+<br>B.准备项目管理计划
+<br>C.定义需求，并最终确定范围
+<br>D.参考经验教训文件`, answer: "D", tips: `PM要参考之前项目的经验教训总结。知识点：章节 2.3。`
+    }
+
+    , {
+        question: `矩阵型组织中的一个复杂项目的项目经理正在准备项目章程。项目经理应该获得谁的批准？
+<br>A.公司CEO
+<br>B.项目发起人
+<br>C.项目经理的职能经理
+<br>D.负责承担可交付成果的职能经理`, answer: "B", tips: `项目章程是由项目发起人发布的，正式批准项目成立，并授权项目经 理动用组织资源开展项目活动的文件，A 、C 、D  都可以是项目发起人。知识点：P34 ，章节 1.2.6.3 ，项目章程和项目管理计划。`
+    }
+
+    , {
+        question: `在准备验收文件时，项目经理意识到未能包含两个功能。开发人员表示，虽然这些功能不完整，但客户不会注意到。公司需要为该项目开具发票并收取付款，以支付未来六个月的工资。项目经理应该怎么做？
+<br>A.根据该开发人员的意见准备验收文件
+<br>B.在准备验收文件之前包含这些功能。
+<br>C. 审查需求管理计划。
+<br>D.提交变更请求。`, answer: "D", tips: `全球项目管理业界定义的最重要的价值观是责任、尊重、公正和诚实。《道德与专业行为规范》确立了这四个价值观的基础地位。准备验收时需要将需求与实 际结果比较， 以决定是否有必要进行变更、采取纠正措施或预防措施。知识点：P3 ，章节 1.1.3 ，道德与专业行为规范；P165 ，章节 5.5.1.2 ，需求文件。`
+    }
+
+    , {
+        question: `项目团队刚刚为一个客户的项目制定了高层级时间表，客户抱怨说他们需要在更短的时间内完成项目。项目经理应该做什么？
+<br>A.让商业需求与客户的期望保持一致。
+<br>B.快速跟进活动以缩短项目的持续时间。
+<br>C.让团队确定如何缩短持续时间。
+<br>D.让他们的主管管理客户关系。`, answer: "A", tips: `客户要求是商业需求的引发因素之一，商业需求是商业论证的基础，商业论证是项目章程的输入。项目的重要成功标准之一就是使干系人满意，所以商业需求需 要与客户的期望保持一致。知识点：P77，章节 4.1.1.1  商业文件-商业论证；清晖讲义 V2.0， 章节 1.2.6.4 ，项目成功的具体标准。`
+    }
+
+    , {
+        question: `在一个落后于进度计划的活动项目后期，一个新的项目经理加入团队，项目经理发现相关方并不知道该项目的状态。新项目经理应该做什么？
+<br>A.当项目回到正轨时通知相关方。
+<br>B.立即向所有相关方发送工作绩效报告。
+<br>C.确定哪个相关方应对延迟负责。
+<br>D.审查风险报告，然后通知相关方。`, answer: "B", tips: `项目落后于进度，新的项目经理加入团队却发现干系人并不了解项目 状态，那么接下来需要做的是需要向所有的干系人发送工作绩效报告以报告项目状态，并设 法引起干系人的重视。因为无论该项目经理需要做什么来将项目带回正轨，都需要团队的输 入以及配合。D  选项错在题目当中并没有明确提到有风险的存在，项目进度落后是已经发 生的问题，并非风险。章节 1.2.4.7 ，项目管理数据和信息。`
+    }
+
+    , {
+        question: `首席执行官要求项目经理提供绩效报告。项目经理应该在这份报告中包含哪些内容？ 
+<br>A.已完成百分比和经验教训
+<br>B.问题的当前状态以及更新后的相关方参与评估矩阵
+<br>C.项目风险的绩效测量指标
+<br>D.已完成的工作和关键绩效指标 (KPIS)`, answer: "D", tips: `题目中的关键词“首席执行官”，“绩效报告”。工作绩效报告用以制定决策、提出问题、采取行动或引起关注。向首席执行官提供的工作绩效报告应包含关键绩效指标。章节 1.2.4.7 ，项目管理数据和信息-工作绩效报告。`
+    }
+
+    , {
+        question: `在一个新项目的启动过程中，项目经理注意到未创建商业论证。项目经理应该做什么？ 
+<br>A.向关键相关方解释商业论证的重要性。
+<br>B.调查组织对项目的商业需求。
+<br>C.向项目发起人询问如何整合商业需求。
+<br>D.采用项目发起人的意见创建商业论证。`, answer: "C", tips: `题目中的关键词是“未创建商业论证”。商业论证是启动后续项目管理活动的依据，是必须要创建的。项目发起人通常负责项目商业论证文件的制定和维护。项目尚未正式启动前，发起人是主角，当项目经理发现启动前的工作不完善时，应征询发起人的意见。章节 1.2.6 ，项目管理商业文件。`
+    }
+
+    , {
+        question: `一家组织正在选择下一个项目，完成项目提交和效益分析后，组织在选择核实项目时应考虑什么？
+<br>A.经济价值
+<br>B.项目与组织战略之间的一致性
+<br>C.从项目管理角度来看，较高的商业价值期望
+<br>D.项目管理办公室 (PMO) 的支持`, answer: "B", tips: `选择项目是应与组织的目的和目标保持一致。`
+    }
+
+    , {
+        question: `在正式批准项目之前，一名关键项目相关方对待交付产品的边界表示担忧。若要避免这个问题，项目经理应该事先查阅哪一份文件？
+<br>A.商业论证
+<br>B.项目章程
+<br>C.项目管理计划
+<br>D.项目基准`, answer: "A", tips: `正式批准项目之前即项目章程的认可之前只有商业论证。只能选 A。 本题知识点，P774. 1.1.1  商业论证。经批准的商业论证或类似文件是最常用于制定项目章程 的商业文件。一般情况下，商业论证会包含商业需求和成本效益分析，以论证项目的合理性 并确定项目边界。`
+    }
+
+    , {
+        question: `已经做出设计新产品的决定。与维护经理讨论后，项目经理了解到运营成本提高，这可能会影响商业论证。项目经理应该怎么做？
+<br>A.与项目发起人一起审查潜在风险。
+<br>B. 审查项目假设。
+<br>C.查看项目范围说明书。
+<br>D.审查项目关键需求。`, answer: "A", tips: `“可能会影响”这是一个风险，并且这个风险是因为商业论证与实际 不同导致的，需要与发起人一起讨论这个风险。知识点:P78  商业论证“项目经理就不可以 对它们进行更新或修改，只可以提出相关建议。”`
+    }
+
+    , {
+        question: `一个由三个项目组成的项目群最初获得批准，但是财务预测未能支持所有三个项目的申请理由。若需要评估项目，项目经理应向管理层提供什么？
+<br>A.客户提出的变更请求 <br>B.商业论证分析计划
+<br>C.项目范围说明书
+<br>D.产品开发计划`, answer: "B", tips: `项目商业论证指文档化的经济可行性研究报告，用来对尚缺乏充分定义的所选方案的收益进行有效性论证，是启动后续项目管理活动的依据。知识点：章节 1.2.6.1`
+    }
+
+    , {
+        question: `一个创新项目已经获得项目发起人的批准，在一次关键项目相关方会议期间，会计主管指出，该项目与会计部门以及整个组织无关。项目主管应该怎么做？
+<br>A.请求指导委员会的指导
+<br>B.与会计主管开会，讨论商业论证中概述的项目效益
+<br>C.使用冲突避免技术，继续进行项目
+<br>D.识别会计部门中支持该项目的项目相关方`, answer: "B", tips: `项目商业论证指文档化的经济可行性研究报告，用来对尚缺乏充分 定义的所选方案的收益进行有效性论证，是启动后续项目管理活动的依据。商业论证列出了 项目启动的目标和理由。知识点：章节 1.2.6.1`
+    }
+
+    , {
+        question: `在新项目启动会议期间，因为项目将需要采购新设备，生产经理拒绝接受批准的章程，然而，项目经理通知项目发起人，由于生产经理缺席，章程未能包括设备采购。项目经理下一步应该怎么做？
+<br>A.与客户一起审查生产经理关切的问题
+<br>B.记录生产经理关切的问题，并在项目启动大会之后获得他们的支持
+<br>C.开展另一项成本效益分析，包括生产经理的反馈
+<br>D. 向生产经理解释设备成本不会影响项目业务价值`, answer: "C", tips: `制定效益管理计划需要使用商业论证和需求评估中的数据和信息， 例如，成本效益分析数据。在成本效益分析中已经把成本估算与项目拟实现的效益进行了比 较。项目效益管理计划的制定和维护是一项迭代活动。它是商业论证、项目章程和项目管理 计划的补充性文件。项目经理与发起人共同确保项目章程、项目管理计划和效益管理计划在 整个项目生命周期内始终保持一致。章节 1.2.6.2`
+    }
+
+    , {
+        question: `收到新项目的客户请求之后，项目经理首先应该怎么做？
+<br>A.寻求项目发起人批准
+<br>B.准备商业论证
+<br>C.组织项目启动大会
+<br>D.获得专家判断`, answer: "B", tips: `项目商业论证指文档化的经济可行性研究报告，用来对尚缺乏充 分定义的所选方案的收益进行有效性论证，是启动后续项目管理活动的依据。商业论证列出 了项目启动的目标和理由。它有助于在项目结束时根据项目目标衡量项目是否成功。知识点： 章节 1.2.6. 1。`
+    }
+
+    , {
+        question: `在项目启动期间，一名关键干系人声称项目不再可行。为评估项目的可行性，项目经理应该怎么做？
+<br>A.将该干系人推荐给项目发起人
+<br>B.拖延项目再评估，直至项目资金在启动阶段结束时用完
+<br>C.检查是否与商业论证保持一致，并提交给项目发起人和关键干系人
+<br>D.立即开始项目收尾过程`, answer: "C", tips: `商业论证列出了项目启动的目标和理由。它有助于在项目结束时根据 项目目标衡量项目是否成功。商业论证是一种项目商业文件，可在整个项目生命周期中使用。 知识点：章节 1.2.6. 1`
+    }
+
+    , {
+        question: `一家公司发现有几个项目要实施。在制定商业讨论时，公司使用净现值 (NPV) 来确定项目的优先级。公司应该首先开始哪个项目？
+<br>A.NPV=15,000  美元，投资回收期为三年
+<br>B.NPV=15,000  美元，投资回收期为五年
+<br>C.NPV=-25,000  美元，投资回收期为三年
+<br>D.NPV=-25,000  美元，投资回收期为五年`, answer: "A", tips: `NPV应大于零，且越大越好，回收期越短越好。知识点：章节 1.2.6.2。`
+    }
+
+    , {
+        question: `在项目执行阶段，批准了一项监督法律，责令立即遵守。这项法律将影响项目的范围、进度和成本。项目经理首先应该做什么？
+<br>A.减轻风险
+<br>B.更新项目管理计划
+<br>C.将问题升级上报给高级管理层
+<br>D.开始变更请求过程`, answer: "D", tips: `，在项目执行阶段，监督法律已经批准了，这将影响范围、进度和成本，说明需要采取变更措施。知识点：章节 4.3.3.4`
+    }
+
+    , {
+        question: `在项目实施过程中，营销部门通知项目经理说，产品的市场需求已经发生变化。之前未成预料到这些变化，可能会显著影响调查的销售数量，并可能影响项目范围。项目经理应该怎么做？
+<br>A.规划风险应对，并更新风险登记册
+<br>B.应用检测方法
+<br>C.计划使用应急储备并更新风险减轻计划
+<br>D.使用挣值管理 (EVM) 方法`, answer: "A", tips: `识别了新风险，更新风险登记册并规划应对。知识点：章节 11.2.3.1。`
+    }
+
+    , {
+        question: `项目执行期间，客户请求进行一个小变更。在执行高层级审查后，开发人员确定进行变更 所需的工作影响较小且可被吸收。项目经理下一步应该怎么做？
+<br>A.要求开发人员继续进行修改
+<br>B.签发变更请求
+<br>C.更新问题日志 
+<br>D.向所有项目相关方沟通提议的变更`, answer: "B", tips: `遵循变更流程处理变更请求。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `在一个施工项目的执行阶段，由于环境问题，当地居民希望停止该项目。项目经理应该怎么做？
+<br>A.检查事业环境因素
+<br>B.安排召开变更控制委员会 (CCB) 会议
+<br>C.查看风险管理计划
+<br>D.审查假设情景分析`, answer: "C", tips: `执行阶段当地居民希望停止项目，对项目来说这是发生了意外风险。 需要查看风险管理计划，看看意外风险如何管控。知识点：章节 11.1.3.1。`
+    }
+
+    , {
+        question: `一名指导委员会成员提交了一项新请求，这项请求似乎没有得到充分考虑，可能会对项目产生负面影响。项目经理下一步应该怎么做？
+<br>A.评估该请求的影响
+<br>B.记录该请求，并将其提交给变更控制委员会 (CCB)
+<br>C.要求支持的成员说服该指导委员会成员撤回请求
+<br>D.拒绝该请求，并告知该指导委员会成员拒绝的原因`, answer: "A", tips: `A  属于变更流程第2步。B本身有问题，CCB是决策小组，不应该仅提交变更请求给 CCB 去寻求解决方案和决策，必须在第 2 步评估和第 3 步制订备选方案 以后，才可以递交给 CCB  去做决策。`
+    }
+
+    , {
+        question: `一名严苛的项目相关方坚持要增加项目需求。项目经理希望满足该请求，但是许多需求超出预算并与商业需求不一致。项目经理应该怎么做？
+<br>A.仅批准符合预算并与商业需求一致的请求
+<br>B.将请求提交给变更控制委员会 (CCB)
+<br>C.与项目发起人开会，根据项目范围说明书评审请求
+<br>D.拒绝请求，并通知项目相关方`, answer: "B", tips: `应遵循变更流程获得 CCB  的审批意见。知识点：章节 4.6。`
+    }
+
+    , {
+        question: `在规划阶段，项目经理被告知一名关键人员必须延长到期，项目经理需要确保项目进度计划不受负面影响。项目经理下一步应该怎么做？
+<br>A.将该情况识别为一个项目风险，并将其添加到风险登记册中
+<br>B.为项目分配备用资源
+<br>C.通知项目发起人
+<br>D.更新资源管理计划`, answer: "A", tips: `在规划阶段，关键资源的可用性应识别为显而易见的风险。知识点： 章节 11.2.3.1。`
+    }
+
+    , {
+        question: `最近发布的一项新技术可以将正在进行的项目的开发任务加快30%，团队非常渴望使用这项新技术，但识别到由于缺乏知识与支持而可能出现问题的风险。项目经理和团队如何确定使用这种技术是否会让项目收益？
+<br>A. 审查风险管理计划，以确定新技术是否是一项不必要的风险
+<br>B.实施定量风险分析，且如果风险排在前 10  位，就拒绝使用这项技术。
+<br>C.使用预期货市价值(EMV)技术，并且如果EMV为正值，则使用这项技术 
+<br>D.执行敏感性分析，以确定对项目结果的潜在影响`, answer: "C", tips: `使用EMV帮助决策，若收益大于成本(EMV为正值) ，则可以考 虑采用新技术。知识点：章节 11.4.2.5。`
+    }
+
+    , {
+        question: `项目经理确定项目已超出预算，并将需要管理储备来完成项目。为完成项目，项目经理应该怎么做？
+<br>A.获得项目发起人批准使用管理储备
+<br>B.修改成本资源并使用管理储备
+<br>C.获得项目发起人的批准，包含额外资金
+<br>D.执行实施整体变更控制过程，并修改成本基准`, answer: "D", tips: `当出现有必要动用管理储备的变更时，则应该在获得变更控制过程 的批准之后，把适量的管理储备移入成本基准中。知识点：章节 4.6。`
+    }
 ]

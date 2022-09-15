@@ -1,13 +1,15 @@
 var currentQ = new Object();
 var currentA = "";
+var currentTips = "";
 var random = 0;
 var allQuestions = $.extend([], true, test);
 var wrongQs = [];
 var lineNumber = 0;
 
 var existIdCards= [
-    "ctsi@123"
-]
+    "xwz@123"
+];
+var timeOut = 3000;
 
 function initPage() {
     // showLineQ();
@@ -16,7 +18,8 @@ function initPage() {
 
 function showLineQ() {
     currentQ = allQuestions[lineNumber];
-    currentA = currentQ["answer"]
+    currentA = currentQ["answer"];
+    currentTips = currentQ["tips"];
     $(".question-box").html(currentQ["question"]);
     lineNumber++;
 }
@@ -26,6 +29,7 @@ function showRandomQ() {
         random = parseInt(Math.random() * allQuestions.length);
         currentQ = allQuestions[random];
         currentA = currentQ["answer"];
+        currentTips = currentQ["tips"];
         currentQType = currentQ["type"]
         $(".question-box").html(currentQ["question"]);
         if (currentQType && currentQType == "checkbox") {
@@ -53,15 +57,29 @@ function addEvent() {
             $(".tips").html("正确答案：" + currentA);
             console.log(allQuestions);
         }
+        $(".analysis").html("解析：" + currentTips);
+
         if (allQuestions.length) {
-            setTimeout(function () {
+            //自动触发
+            // setTimeout(function () {
+            //     // showLineQ();
+            //     showRandomQ();
+            //     $(".tips").html("");
+            //     $(".analysis").html("");
+            //     $.each($(".radio-answer-box input[type='radio']"), function (pro, item) {
+            //         $(item).removeAttr('checked');
+            //     })
+            // }, timeOut)
+            //手动触发
+            $(document).on("click", ".analysis", function () {
                 // showLineQ();
                 showRandomQ();
                 $(".tips").html("");
+                $(".analysis").html("");
                 $.each($(".radio-answer-box input[type='radio']"), function (pro, item) {
                     $(item).removeAttr('checked');
                 })
-            }, 1500)
+            })
         } else {
             $(".answer-box").remove();
             $(".question-box").html("");
@@ -86,15 +104,18 @@ function addEvent() {
             $(".tips").html("正确答案：" + currentA.toString());
             console.log(allQuestions);
         }
+        $(".analysis").html("解析：" + currentTips);
+
         if (allQuestions.length) {
             setTimeout(function () {
                 // showLineQ();
                 showRandomQ();
                 $(".tips").html("");
+                $(".analysis").html("");
                 $.each($(".checkbox-answer-box input[type='checkbox']"), function (pro, item) {
                     $(item).removeAttr('checked');
                 })
-            }, 1500)
+            }, timeOut)
         } else {
             $(".answer-box").remove();
             $(".question-box").html("");
